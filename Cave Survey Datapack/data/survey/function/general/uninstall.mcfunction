@@ -13,15 +13,6 @@ scoreboard objectives remove max_command_chain_length
 scoreboard objectives remove click_carrot_stick
 scoreboard objectives remove click_writable_book
 scoreboard objectives remove uninstall_timer
-# remove command objectives
-scoreboard objectives remove survey.clear_flagging_tape
-scoreboard objectives remove survey.clear_witeout
-scoreboard objectives remove survey.give_disto
-scoreboard objectives remove survey.give_flagging_tape
-scoreboard objectives remove survey.give_headlamp
-scoreboard objectives remove survey.give_witeout
-scoreboard objectives remove survey.help
-scoreboard objectives remove survey.uninstall
 # remove disto objectives
 scoreboard objectives remove disto_raycast_steps
 scoreboard objectives remove disto_forwards_raycast_steps
