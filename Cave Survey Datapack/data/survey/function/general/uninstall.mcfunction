@@ -13,6 +13,9 @@ scoreboard objectives remove max_command_chain_length
 scoreboard objectives remove click_carrot_stick
 scoreboard objectives remove click_writable_book
 scoreboard objectives remove uninstall_timer
+scoreboard objectives remove current_gametime
+scoreboard objectives remove last_gametime
+scoreboard objectives remove gametime_change
 # remove disto objectives
 scoreboard objectives remove disto_raycast_steps
 scoreboard objectives remove disto_forwards_raycast_steps
@@ -89,6 +92,7 @@ tag @a remove disto_mainhand
 tag @a remove disto_offhand
 
 # remove storage data
+data remove storage survey:data general
 data remove storage survey:data disto
 data remove storage survey:data witeout
 data remove storage survey:data flagging_tape

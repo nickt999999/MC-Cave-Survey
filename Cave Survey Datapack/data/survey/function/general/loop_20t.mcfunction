@@ -1,6 +1,13 @@
-# display enable message on first tick
-execute unless data storage survey:data {general:{sent_enable_message:1b}} run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
-data modify storage survey:data general.sent_enable_message set value 1b
+# display enable message if storage empty
+execute unless data storage survey:data general.gametime run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+# display enable message if datapack previously disabled
+execute store result score #survey current_gametime run time query gametime
+execute store result score #survey last_gametime run data get storage survey:data general.gametime
+scoreboard players operation #survey gametime_change = #survey current_gametime
+scoreboard players operation #survey gametime_change -= #survey last_gametime
+execute if data storage survey:data general.gametime if score #survey gametime_change matches 50.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+# store gametime in storage path
+execute store result storage survey:data general.gametime int 1 run time query gametime
 
 # give survey recipes
 recipe give @a[tag=!survey_recipes] survey:disto

@@ -11,6 +11,9 @@ scoreboard objectives add max_command_chain_length dummy
 scoreboard objectives add click_carrot_stick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add click_writable_book minecraft.used:minecraft.writable_book
 scoreboard objectives add uninstall_timer dummy
+scoreboard objectives add current_gametime dummy
+scoreboard objectives add last_gametime dummy
+scoreboard objectives add gametime_change dummy
 # add disto objectives
 scoreboard objectives add disto_raycast_steps dummy
 scoreboard objectives add disto_forwards_raycast_steps dummy
@@ -94,6 +97,9 @@ execute store result score #survey disto_id_counter run random value 0..21474836
 # remove recipe tag
 tag @a remove survey_recipes
 
+# display load text
+# TEMP - should only show on first install
+#tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
 # display error message if low maxCommandChainLength
 execute store result score @p max_command_chain_length run gamerule maxCommandChainLength
 execute unless score @p max_command_chain_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low maxCommandChainLength value detected - this may interfere with the cave survey datapack. It's reccomended to reset maxCommandChainLength to its default value using ","color":"red"},{"text":"/gamerule maxCommandChainLength 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule maxCommandChainLength 65536"}}]
