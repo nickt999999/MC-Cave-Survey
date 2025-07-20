@@ -1,3 +1,7 @@
+# display enable message on first tick
+execute unless data storage survey:data {general:{sent_enable_message:1b}} run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+data modify storage survey:data general.sent_enable_message set value 1b
+
 # give survey recipes
 recipe give @a[tag=!survey_recipes] survey:disto
 recipe give @a[tag=!survey_recipes] survey:witeout
