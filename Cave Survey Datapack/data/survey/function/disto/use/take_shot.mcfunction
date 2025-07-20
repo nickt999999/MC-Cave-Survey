@@ -1,6 +1,5 @@
 # store slot in storage path
 $data modify storage survey:data disto.shot.slot set value $(slot)
-say hi
 # raycast from player's eyes
 execute anchored eyes positioned ^ ^ ^ run function survey:disto/use/eyes_origin/raycast
 
