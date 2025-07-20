@@ -106,4 +106,4 @@ kill @e[type=marker,tag=ang_target]
 execute if entity @e[type=marker] run tellraw @s [{"text":"["},{"text":"DEBUG","color":"red"},{"text":"] "},{"text":"Markers detected after uninstall","color":"red"}]
 
 # disable datapack
-datapack disable "file/Survey Datapack"
+datapack disable "file/Cave Survey Datapack"
