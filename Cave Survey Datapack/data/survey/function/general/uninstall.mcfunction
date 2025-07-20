@@ -96,7 +96,7 @@ data remove storage survey:data flagging_tape
 function survey:headlamp/remove_light
 
 # display uninstall text
-tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/Survey Datapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/Survey Datapack\""}},{"text":" to re-enable"}]
+tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/Cave Survey Datapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/Cave Survey Datapack\""}},{"text":" to re-enable"}]
 
 # TEMP debug
 kill @e[type=marker,tag=dist_origin]
@@ -106,4 +106,4 @@ kill @e[type=marker,tag=ang_target]
 execute if entity @e[type=marker] run tellraw @s [{"text":"["},{"text":"DEBUG","color":"red"},{"text":"] "},{"text":"Markers detected after uninstall","color":"red"}]
 
 # disable datapack
-datapack disable "file/Survey Datapack"
+datapack disable "file/Cave Survey Datapack"
