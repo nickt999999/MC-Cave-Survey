@@ -1,0 +1,2 @@
+# replace item and set disto id from counter
+$item replace entity @s container.$(slot) with carrot_on_a_stick[item_name="Disto-X2",item_model="survey:disto",custom_data={disto:1b,disto_id:$(counter),backsight_mode:0b,"survey_tool":1b,survey_datapack:1b}]

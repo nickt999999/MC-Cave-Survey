@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "NBN",
+      "NNN",
+      "NNN"
+    ],
+    "key": {
+        "N": "minecraft:netherite_block",
+        "B": "minecraft:beacon"
+    },
+    "result": {
+        "id": "minecraft:carrot_on_a_stick",
+        "components": {
+            "item_name": "Disto-X2",
+            "item_model": "survey:disto",
+            "custom_data": {
+                disto: true,
+                disto_id: false,
+                backsight_mode: false,
+                survey_tool: true,
+                survey_datapack: true
+            }
+        }
+    }
+  }

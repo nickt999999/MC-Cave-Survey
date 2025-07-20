@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:iron_ingot",
+        "minecraft:redstone_lamp",
+        "minecraft:string"
+    ],
+    "result": {
+        "id": "minecraft:carrot_on_a_stick",
+        "components": {
+            "item_name": "Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",
+            "item_model": "survey:headlamp",
+            "custom_data": {
+                headlamp: true,
+                survey_datapack: true
+            },
+            "equippable": {
+                "slot": "head",
+                "damage_on_hurt": false
+        }
+        }
+    }
+}

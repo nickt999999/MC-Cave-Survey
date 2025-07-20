@@ -1,0 +1,24 @@
+# display target position particle
+execute at @e[tag=disto_target_pos,type=marker,distance=..260] facing entity @s eyes run particle electric_spark ^ ^ ^0.05 0 0 0 0 5 force
+
+# play disto beep
+execute if data storage survey:data {disto:{shot:{origin:"center"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 1.781797
+execute if data storage survey:data {disto:{shot:{origin:"eyes"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 1.587401
+execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 2
+# store shot output in storage path
+execute if data storage survey:data {disto:{shot:{slot:"mainhand"}}} run function survey:disto/use/triple_shot/store_shot with entity @s SelectedItem.components."minecraft:custom_data"
+execute if data storage survey:data {disto:{shot:{slot:"offhand"}}} run function survey:disto/use/triple_shot/store_shot with entity @s equipment.offhand.components."minecraft:custom_data"
+# queue triple shot beep if last 3 shots match
+execute if data storage survey:data {disto:{shot:{shot_in_range:1b}}} if function survey:disto/use/triple_shot/if_match run function survey:disto/use/triple_shot/queue_beep
+
+# display shot origin in action bar
+execute if data storage survey:data {disto:{shot:{origin:"center"}}} run title @s actionbar [{"text":"["},{"text":"DISTO","color":"red"},{"text":"] "},{"text":"Position: ","color":"gray"},{"text":"body"}]
+execute if data storage survey:data {disto:{shot:{origin:"eyes"}}} run title @s actionbar [{"text":"["},{"text":"DISTO","color":"red"},{"text":"] "},{"text":"Position: ","color":"gray"},{"text":"eyes"}]
+execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} run title @s actionbar [{"text":"["},{"text":"DISTO","color":"red"},{"text":"] "},{"text":"Position: ","color":"gray"},{"text":"Wite-Out blot"}]
+
+# display out-of-range message if shot out of range
+execute if data storage survey:data {disto:{shot:{shot_in_range:0b}}} run return run tellraw @s [{"text":"["},{"text":"DISTO","color":"red"},{"text":"]"},{"text":" Azimuth: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_azimuth_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_1"}},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Inclination: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_inclination_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_inclination_decimal_1"}},{"score":{"name":"#survey","objective":"disto_inclination_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Distance: ","color":"gray"},{"text":"---"}]
+# else - display backsight mode message if backsight mode enabled
+execute if items entity @s weapon.* carrot_on_a_stick[custom_data~{"backsight_mode":1b}] run return run tellraw @s [{"text":"["},{"text":"DISTO","color":"red"},{"text":"]"},{"text":" Azimuth","color":"gray"},{"text":"(*)","color":"gold"},{"text":": ","color":"gray"},{"score":{"name":"#survey","objective":"disto_azimuth_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_1"}},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Inclination","color":"gray"},{"text":"(*)","color":"gold"},{"text":": ","color":"gray"},{"score":{"name":"#survey","objective":"disto_inclination_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_inclination_decimal_1"}},{"score":{"name":"#survey","objective":"disto_inclination_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Distance: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_distance_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_distance_decimal_1"}},{"score":{"name":"#survey","objective":"disto_distance_decimal_2"}},{"text":"m"}]
+# else - display default message
+tellraw @s [{"text":"["},{"text":"DISTO","color":"red"},{"text":"]"},{"text":" Azimuth: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_azimuth_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_1"}},{"score":{"name":"#survey","objective":"disto_azimuth_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Inclination: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_inclination_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_inclination_decimal_1"}},{"score":{"name":"#survey","objective":"disto_inclination_decimal_2"}},{"text":"°"},{"text":" |","color":"red"},{"text":" Distance: ","color":"gray"},{"score":{"name":"#survey","objective":"disto_distance_whole"}},{"text":"."},{"score":{"name":"#survey","objective":"disto_distance_decimal_1"}},{"score":{"name":"#survey","objective":"disto_distance_decimal_2"}},{"text":"m"}]

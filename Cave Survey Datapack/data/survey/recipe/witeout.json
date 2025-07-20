@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:glass_bottle",
+        "minecraft:slime_ball",
+        "minecraft:white_dye"
+    ],
+    "result": {
+        "id": "minecraft:carrot_on_a_stick",
+        "components": {
+            "item_name": "Wite-Out",
+            "item_model": "survey:witeout",
+            "custom_data": {
+                witeout: true,
+                survey_tool: true,
+                survey_datapack: true
+            },
+            "max_damage": 70
+        }
+    }
+}

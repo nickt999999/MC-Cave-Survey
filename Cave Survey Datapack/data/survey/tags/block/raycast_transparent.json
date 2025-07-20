@@ -1,0 +1,27 @@
+{
+    "values":[
+      "minecraft:air",
+      "minecraft:cave_air",
+      "minecraft:void_air",
+      "minecraft:light",
+      "minecraft:vine",
+      "minecraft:glow_lichen",
+      "minecraft:torch",
+      "minecraft:wall_torch",
+      "minecraft:tripwire",
+      "minecraft:leaf_litter",
+      "minecraft:snow",
+      "#minecraft:buttons",
+      "#minecraft:wool_carpets",
+      "#minecraft:candles",
+      "#minecraft:crops",
+      "#minecraft:fire",
+      "#minecraft:flowers",
+      "#minecraft:pressure_plates",
+      "#minecraft:rails",
+      "minecraft:redstone_wire",
+      "#minecraft:signs",
+      "#minecraft:small_flowers",
+      "#minecraft:wall_signs"
+    ]
+  }
