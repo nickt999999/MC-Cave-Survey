@@ -5,7 +5,7 @@ execute store result score #survey current_gametime run time query gametime
 execute store result score #survey last_gametime run data get storage survey:data general.gametime
 scoreboard players operation #survey gametime_change = #survey current_gametime
 scoreboard players operation #survey gametime_change -= #survey last_gametime
-execute if data storage survey:data general.gametime if score #survey gametime_change matches 50.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+execute if data storage survey:data general.gametime if score #survey gametime_change matches 100.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
 # store gametime in storage path
 execute store result storage survey:data general.gametime int 1 run time query gametime
 
