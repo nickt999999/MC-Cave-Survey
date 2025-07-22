@@ -7,6 +7,6 @@ execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} positioned
 scoreboard players operation #survey disto_intended_origin_forwards_raycast_steps = #survey disto_raycast_steps
 # precise backwards direction raycast
 scoreboard players set #survey disto_raycast_steps 0
-execute unless data storage survey:data {shot:{raycast:{result:"shot_intersect"}}} at @e[tag=raycast_target_pos,type=marker,distance=..260] positioned ^ ^ ^0.05 run function survey:disto/use/raycast/raycast_backwards_intended_origin_loop
+execute unless data storage survey:data {shot:{raycast:{result:"shot_intersect"}}} at @e[tag=raycast_target_pos,type=marker,distance=..260] positioned ^ ^ ^0.1 run function survey:disto/use/raycast/raycast_backwards_intended_origin_loop
 # spawn target position marker
 execute at @e[tag=raycast_target_pos,type=marker,distance=..260] run summon marker ~ ~ ~ {Tags:["disto_intended_target_pos","survey_datapack"]}

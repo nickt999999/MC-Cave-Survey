@@ -40,12 +40,12 @@ scoreboard players operation #survey disto_azimuth_decimal_2 /= #survey 10
 
 # calculate distance (1000 scale) from raycast step counters 
 scoreboard players operation #survey disto_forwards_distance = #survey disto_forwards_raycast_steps
-# +0.05 blocks per forwards raycast step
-scoreboard players operation #survey disto_forwards_distance *= #survey 50
+# +0.1 blocks per forwards raycast step
+scoreboard players operation #survey disto_forwards_distance *= #survey 100
 # -0.001 blocks per backwards raycast step
 scoreboard players operation #survey disto_backwards_distance = #survey disto_backwards_raycast_steps
-# 0.05 block offset from center/witeout origin raycast
-execute unless data storage survey:data {disto:{shot:{origin:"eyes"}}} run scoreboard players remove #survey disto_backwards_distance 50
+# +0.1 block offset if body/witeout origin
+execute unless data storage survey:data {disto:{shot:{origin:"eyes"}}} run scoreboard players remove #survey disto_backwards_distance 100
 scoreboard players operation #survey disto_distance = #survey disto_forwards_distance
 scoreboard players operation #survey disto_distance -= #survey disto_backwards_distance
 # calculate distance display objectives

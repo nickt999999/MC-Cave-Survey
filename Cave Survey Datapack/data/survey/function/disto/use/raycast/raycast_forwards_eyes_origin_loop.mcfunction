@@ -7,4 +7,4 @@ execute if score #survey disto_raycast_steps = #survey disto_forwards_raycast_st
 # increment raycast step counter
 scoreboard players add #survey disto_raycast_steps 1
 # loop raycast forwards
-execute positioned ^ ^ ^0.05 run function survey:disto/use/raycast/raycast_forwards_eyes_origin_loop
+execute positioned ^ ^ ^0.1 run function survey:disto/use/raycast/raycast_forwards_eyes_origin_loop

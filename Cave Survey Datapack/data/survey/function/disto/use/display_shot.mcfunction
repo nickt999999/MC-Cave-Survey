@@ -1,5 +1,5 @@
 # display target position particle
-execute at @e[tag=disto_target_pos,type=marker,distance=..260] facing entity @s eyes run particle electric_spark ^ ^ ^0.05 0 0 0 0 5 force
+execute at @e[tag=disto_target_pos,type=marker,distance=..260] facing entity @s eyes run particle electric_spark ^ ^ ^0.1 0 0 0 0 5 force
 
 # play disto beep
 execute if data storage survey:data {disto:{shot:{origin:"center"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 1.781797
