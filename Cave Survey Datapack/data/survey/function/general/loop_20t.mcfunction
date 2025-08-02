@@ -11,10 +11,13 @@ execute store result storage survey:data general.gametime int 1 run time query g
 
 # enable help command objective
 scoreboard players enable @a survey.help
-
-# enable/disable op command objectives if op tag updated
+# enable/disable op command permissions if op tag updated
 execute as @a[tag=survey.op] unless score @s survey.clear_flagging_tape matches 0.. run function survey:general/enable_op_commands
 execute as @a[tag=!survey.op] if score @s survey.clear_flagging_tape matches 0.. run function survey:general/disable_op_commands
+# update confirm command timers
+execute as @a if score @s uninstall_timer matches 1..200 run scoreboard players remove @s uninstall_timer 20
+execute as @a if score @s clear_witeout_timer matches 1..200 run scoreboard players remove @s clear_witeout_timer 20
+execute as @a if score @s clear_flagging_tape_timer matches 1..200 run scoreboard players remove @s clear_flagging_tape_timer 20
 
 # give survey recipes
 recipe give @a survey:disto
@@ -22,15 +25,10 @@ recipe give @a survey:flagging_tape
 recipe give @a survey:headlamp
 recipe give @a survey:witeout
 
-# update confirm command timers
-execute as @a if score @s uninstall_timer matches 1..100 run scoreboard players remove @s uninstall_timer 20
-execute as @a if score @s clear_witeout_timer matches 1..100 run scoreboard players remove @s clear_witeout_timer 20
-execute as @a if score @s clear_flagging_tape_timer matches 1..100 run scoreboard players remove @s clear_flagging_tape_timer 20
-
 # set disto swaphands timer if unset
 execute as @a unless score @s disto_swaphands_timer matches 0..5 run scoreboard players set @s disto_swaphands_timer 0
 
-# clear placed entities if block broken
+# clear witeout & flagging tape entities if block broken
 execute as @a at @e[tag=witeout_blot_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.01 #survey:raycast_transparent run function survey:witeout/break
 execute as @a at @e[tag=flagging_tape_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.001 #survey:raycast_transparent run function survey:flagging_tape/break
 

@@ -19,10 +19,6 @@ execute if items entity @s weapon.* carrot_on_a_stick[custom_data~{disto:1b}] if
 # set new disto item id
 execute if data entity @s Inventory[{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{disto:1b,disto_id:0b}}}] run function survey:disto/id/set_item_id
 
-# process witeout if player right click item
-execute at @s if score @s click_carrot_stick matches 1.. if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{witeout:1b}] run function survey:witeout/use/rclick_item {slot:"mainhand"}
-execute at @s if score @s click_carrot_stick matches 1.. if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{witeout:1b}] unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] run function survey:witeout/use/rclick_item {slot:"offhand"}
-
 # process flagging tape if player holding item
 execute at @s if items entity @s weapon.mainhand writable_book[custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"mainhand",item:"writable_book"}
 execute at @s if items entity @s weapon.mainhand written_book[custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"mainhand",item:"written_book"}
@@ -31,6 +27,10 @@ execute at @s if items entity @s weapon.offhand written_book[custom_data~{flaggi
 
 # update headlamp light
 execute at @s run function survey:headlamp/update_light
+
+# process witeout if player right click item
+execute at @s if score @s click_carrot_stick matches 1.. if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{witeout:1b}] run function survey:witeout/use/rclick_item {slot:"mainhand"}
+execute at @s if score @s click_carrot_stick matches 1.. if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{witeout:1b}] unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] run function survey:witeout/use/rclick_item {slot:"offhand"}
 
 # reset player right click objectives
 scoreboard players set @s[scores={click_carrot_stick=1..}] click_carrot_stick 0

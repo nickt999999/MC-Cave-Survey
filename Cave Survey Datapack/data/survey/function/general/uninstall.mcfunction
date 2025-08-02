@@ -95,7 +95,7 @@ scoreboard objectives remove place_light_counter_x
 scoreboard objectives remove place_light_counter_y
 scoreboard objectives remove place_light_counter_z
 
-# remove tags (online players only)
+# remove tags (*online players only)
 tag @a remove disto_mainhand
 tag @a remove disto_offhand
 tag @a remove survey.op
