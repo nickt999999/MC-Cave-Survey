@@ -1,2 +1,6 @@
 # give headlamp item
 give @s carrot_on_a_stick[item_name="Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",item_model="survey:headlamp",custom_data={headlamp:1b,survey_datapack:1b},equippable={slot:head,damage_on_hurt:0b}]
+
+# re-enable command objective
+execute if entity @s[tag=survey.op] run scoreboard players enable @s survey.give_headlamp
+execute if entity @s[tag=survey.op] run scoreboard players set @s survey.give_headlamp 0

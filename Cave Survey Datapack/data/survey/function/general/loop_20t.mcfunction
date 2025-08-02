@@ -1,13 +1,22 @@
 # display enable message if storage empty
-execute unless data storage survey:data general.gametime run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+execute unless data storage survey:data general.gametime run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/trigger survey.help","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.help"}},{"text":" for info & datapack commands"}]
 # display enable message if datapack previously disabled
 execute store result score #survey current_gametime run time query gametime
 execute store result score #survey last_gametime run data get storage survey:data general.gametime
 scoreboard players operation #survey gametime_change = #survey current_gametime
 scoreboard players operation #survey gametime_change -= #survey last_gametime
-execute if data storage survey:data general.gametime if score #survey gametime_change matches 100.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/function survey:command/help","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/help"}},{"text":" for info & datapack commands"}]
+execute if data storage survey:data general.gametime if score #survey gametime_change matches 100.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack enabled. Use "},{"text":"/trigger survey.help","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.help"}},{"text":" for info & datapack commands"}]
 # store gametime in storage path
 execute store result storage survey:data general.gametime int 1 run time query gametime
+
+# enable help command objective
+scoreboard players enable @a[tag=!survey_command] survey.help
+# give help command tag
+tag @a[tag=!survey_command] add survey_command
+
+# enable/disable op command objectives if op tag updated
+execute as @a[tag=survey.op] unless score @s survey.clear_flagging_tape matches 0.. run function survey:general/enable_op_commands
+execute as @a[tag=!survey.op] if score @s survey.clear_flagging_tape matches 0.. run function survey:general/disable_op_commands
 
 # give survey recipes
 recipe give @a[tag=!survey_recipes] survey:disto
