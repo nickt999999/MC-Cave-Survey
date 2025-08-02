@@ -10,9 +10,9 @@
             "item_name": "Flagging Tape",
             "item_model": "survey:flagging_tape",
             "custom_data": {
-                flagging_tape: true,
-                survey_tool: true,
-                survey_datapack: true
+                "flagging_tape": true,
+                "survey_tool": true,
+                "survey_datapack": true
             },
             "max_damage": 45
         }

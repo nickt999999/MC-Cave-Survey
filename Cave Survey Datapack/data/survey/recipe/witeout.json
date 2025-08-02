@@ -11,9 +11,9 @@
             "item_name": "Wite-Out",
             "item_model": "survey:witeout",
             "custom_data": {
-                witeout: true,
-                survey_tool: true,
-                survey_datapack: true
+                "witeout": true,
+                "survey_tool": true,
+                "survey_datapack": true
             },
             "max_damage": 70
         }

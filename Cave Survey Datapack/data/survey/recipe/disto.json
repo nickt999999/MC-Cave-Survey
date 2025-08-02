@@ -15,11 +15,11 @@
             "item_name": "Disto-X2",
             "item_model": "survey:disto",
             "custom_data": {
-                disto: true,
-                disto_id: false,
-                backsight_mode: false,
-                survey_tool: true,
-                survey_datapack: true
+                "disto": true,
+                "disto_id": false,
+                "backsight_mode": false,
+                "survey_tool": true,
+                "survey_datapack": true
             }
         }
     }
