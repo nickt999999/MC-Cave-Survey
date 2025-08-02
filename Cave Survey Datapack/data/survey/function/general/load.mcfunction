@@ -103,9 +103,6 @@ scoreboard players set #survey 1000 1000
 # set initial disto id counter
 execute store result score #survey disto_id_counter run random value 0..2147483646
 
-# remove recipe tag
-tag @a remove survey_recipes
-
 # display error message if low maxCommandChainLength
 execute store result score @p max_command_chain_length run gamerule maxCommandChainLength
 execute unless score @p max_command_chain_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low maxCommandChainLength value detected - this may interfere with the cave survey datapack. It's reccomended to reset maxCommandChainLength to its default value using ","color":"red"},{"text":"/gamerule maxCommandChainLength 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule maxCommandChainLength 65536"}}]

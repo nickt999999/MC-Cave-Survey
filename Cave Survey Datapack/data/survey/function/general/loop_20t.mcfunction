@@ -10,21 +10,17 @@ execute if data storage survey:data general.gametime if score #survey gametime_c
 execute store result storage survey:data general.gametime int 1 run time query gametime
 
 # enable help command objective
-scoreboard players enable @a[tag=!survey_command] survey.help
-# give help command tag
-tag @a[tag=!survey_command] add survey_command
+scoreboard players enable @a survey.help
 
 # enable/disable op command objectives if op tag updated
 execute as @a[tag=survey.op] unless score @s survey.clear_flagging_tape matches 0.. run function survey:general/enable_op_commands
 execute as @a[tag=!survey.op] if score @s survey.clear_flagging_tape matches 0.. run function survey:general/disable_op_commands
 
 # give survey recipes
-recipe give @a[tag=!survey_recipes] survey:disto
-recipe give @a[tag=!survey_recipes] survey:witeout
-recipe give @a[tag=!survey_recipes] survey:headlamp
-recipe give @a[tag=!survey_recipes] survey:flagging_tape
-# give recipe tag
-tag @a[tag=!survey_recipes] add survey_recipes
+recipe give @a survey:disto
+recipe give @a survey:flagging_tape
+recipe give @a survey:headlamp
+recipe give @a survey:witeout
 
 # update confirm command timers
 execute as @a if score @s uninstall_timer matches 1..100 run scoreboard players remove @s uninstall_timer 20

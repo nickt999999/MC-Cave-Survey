@@ -96,10 +96,8 @@ scoreboard objectives remove place_light_counter_y
 scoreboard objectives remove place_light_counter_z
 
 # remove tags (online players only)
-tag @a remove survey_recipes
 tag @a remove disto_mainhand
 tag @a remove disto_offhand
-tag @a remove survey_command
 tag @a remove survey.op
 
 # remove storage data
