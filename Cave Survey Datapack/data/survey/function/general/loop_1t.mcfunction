@@ -1,5 +1,3 @@
-## from #minecraft:tick
-
 # use disto if player right click item
 execute as @a at @s if score @s click_carrot_stick matches 1.. unless score @s disto_cooldown matches 1..20 if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{disto:1b}] run function survey:disto/use/take_shot {slot:"mainhand"}
 execute as @a at @s if score @s click_carrot_stick matches 1.. unless score @s disto_cooldown matches 1..20 if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{disto:1b}] unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] run function survey:disto/use/take_shot {slot:"offhand"}
