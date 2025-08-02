@@ -14,6 +14,15 @@ scoreboard objectives add uninstall_timer dummy
 scoreboard objectives add current_gametime dummy
 scoreboard objectives add last_gametime dummy
 scoreboard objectives add gametime_change dummy
+# add command objectives
+scoreboard objectives add survey.clear_flagging_tape trigger
+scoreboard objectives add survey.clear_witeout trigger
+scoreboard objectives add survey.give_disto trigger
+scoreboard objectives add survey.give_flagging_tape trigger
+scoreboard objectives add survey.give_headlamp trigger
+scoreboard objectives add survey.give_witeout trigger
+scoreboard objectives add survey.help trigger
+scoreboard objectives add survey.uninstall trigger
 # add disto objectives
 scoreboard objectives add disto_raycast_steps dummy
 scoreboard objectives add disto_forwards_raycast_steps dummy

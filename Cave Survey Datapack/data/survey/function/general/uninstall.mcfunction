@@ -1,5 +1,5 @@
 # cancel uninstall if confirm command not used
-execute unless score @s uninstall_timer matches 1..200 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall cave survey datapack", "color":"red"}]
+execute unless score @s uninstall_timer matches 1..200 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/trigger survey.uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.uninstall"}},{"text":" or "},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall cave survey datapack", "color":"red"}]
 execute unless score @s uninstall_timer matches 1..200 run return 0
 
 # remove general objectives
@@ -16,6 +16,15 @@ scoreboard objectives remove uninstall_timer
 scoreboard objectives remove current_gametime
 scoreboard objectives remove last_gametime
 scoreboard objectives remove gametime_change
+# remove command objectives
+scoreboard objectives remove survey.clear_flagging_tape
+scoreboard objectives remove survey.clear_witeout
+scoreboard objectives remove survey.give_disto
+scoreboard objectives remove survey.give_flagging_tape
+scoreboard objectives remove survey.give_headlamp
+scoreboard objectives remove survey.give_witeout
+scoreboard objectives remove survey.help
+scoreboard objectives remove survey.uninstall
 # remove disto objectives
 scoreboard objectives remove disto_raycast_steps
 scoreboard objectives remove disto_forwards_raycast_steps
@@ -86,10 +95,12 @@ scoreboard objectives remove place_light_counter_x
 scoreboard objectives remove place_light_counter_y
 scoreboard objectives remove place_light_counter_z
 
-# remove tags
+# remove tags (online players only)
 tag @a remove survey_recipes
 tag @a remove disto_mainhand
 tag @a remove disto_offhand
+tag @a remove survey_command
+tag @a remove survey.op
 
 # remove storage data
 data remove storage survey:data general

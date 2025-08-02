@@ -1,3 +1,13 @@
+# run datapack command if command objective triggered
+execute if score @s survey.clear_flagging_tape matches 1.. run function survey:command/clear_flagging_tape
+execute if score @s survey.clear_witeout matches 1.. run function survey:command/clear_witeout
+execute if score @s survey.give_disto matches 1.. run function survey:command/give_disto
+execute if score @s survey.give_flagging_tape matches 1.. run function survey:command/give_flagging_tape
+execute if score @s survey.give_headlamp matches 1.. run function survey:command/give_headlamp
+execute if score @s survey.give_witeout matches 1.. run function survey:command/give_witeout
+execute if score @s survey.help matches 1.. run function survey:command/help
+execute if score @s survey.uninstall matches 1.. run function survey:command/uninstall
+
 # use disto if player right click item
 execute at @s if score @s click_carrot_stick matches 1.. unless score @s disto_cooldown matches 1..20 if items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{disto:1b}] run function survey:disto/use/take_shot {slot:"mainhand"}
 execute at @s if score @s click_carrot_stick matches 1.. unless score @s disto_cooldown matches 1..20 if items entity @s weapon.offhand carrot_on_a_stick[custom_data~{disto:1b}] unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] run function survey:disto/use/take_shot {slot:"offhand"}

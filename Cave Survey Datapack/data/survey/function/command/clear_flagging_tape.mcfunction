@@ -17,3 +17,7 @@ execute if score #survey flagging_tape_count matches 1.. if score @s clear_flagg
 # update confirm timer
 execute if score #survey flagging_tape_count matches 1.. unless score @s clear_flagging_tape_timer matches 1..100 run scoreboard players set @s clear_flagging_tape_timer 100
 execute if score #survey flagging_tape_count matches 1.. if score @s clear_flagging_tape_timer matches 1..99 run scoreboard players set @s clear_flagging_tape_timer 0
+
+# re-enable command objective
+execute if entity @s[tag=survey.op] run scoreboard players enable @s survey.clear_flagging_tape
+execute if entity @s[tag=survey.op] run scoreboard players set @s survey.clear_flagging_tape 0
