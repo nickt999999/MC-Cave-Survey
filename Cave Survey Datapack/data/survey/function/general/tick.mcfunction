@@ -1,4 +1,4 @@
 ## from #minecraft:tick
 
-# loop function every 1 tick
-function survey:general/loop_1t
+# loop function for each player every tick
+execute as @a run function survey:general/loop_1t
