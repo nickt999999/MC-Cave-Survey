@@ -1,9 +1,10 @@
 # store slot and item in storage path
 $data modify storage survey:data witeout.slot set value $(slot)
 
-# 5m range raycast
+# 4.5-5m range raycast
 tag @s add self
-scoreboard players set #survey witeout_raycast_steps 0
+execute if entity @s[gamemode=creative] run scoreboard players set #survey witeout_raycast_steps 0
+execute if entity @s[gamemode=!creative] run scoreboard players set #survey witeout_raycast_steps 50
 execute anchored eyes positioned ^ ^ ^ run function survey:witeout/raycast/raycast_loop
 
 # place witeout blot if raycast hits block

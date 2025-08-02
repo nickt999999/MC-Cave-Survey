@@ -2,7 +2,7 @@
 $data modify storage survey:data flagging_tape.slot set value $(slot)
 $data modify storage survey:data flagging_tape.item set value '$(item)'
 
-# 5m range raycast if player right click or item text written
+# 4.5-5m range raycast if player right click or item text written
 execute if score @s click_writable_book matches 1.. run function survey:flagging_tape/use/raycast
 execute unless score @s click_writable_book matches 1.. if function survey:flagging_tape/text_check/if_text_written run function survey:flagging_tape/use/raycast
 
@@ -10,7 +10,7 @@ execute unless score @s click_writable_book matches 1.. if function survey:flagg
 execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} if data storage survey:data {flagging_tape:{slot:"mainhand"}} at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/break
 execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} if data storage survey:data {flagging_tape:{slot:"offhand"}} unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/break
 
-# new 5m range raycast if player breaks flagging tape and valid item text written
+# new 4.5-5m range raycast if player breaks flagging tape and valid item text written
 execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} if data storage survey:data {flagging_tape:{slot:"mainhand"}} if function survey:flagging_tape/text_check/if_text_written if function survey:flagging_tape/text_check/if_valid_text run function survey:flagging_tape/use/raycast
 execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} if data storage survey:data {flagging_tape:{slot:"offhand"}} unless items entity @s weapon.mainhand carrot_on_a_stick[custom_data~{"survey_tool":1b}] if function survey:flagging_tape/text_check/if_text_written if function survey:flagging_tape/text_check/if_valid_text run function survey:flagging_tape/use/raycast
 
