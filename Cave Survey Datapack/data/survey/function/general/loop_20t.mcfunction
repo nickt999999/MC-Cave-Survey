@@ -28,7 +28,7 @@ recipe give @a survey:witeout
 # set disto swaphands timer if unset
 execute as @a unless score @s disto_swaphands_timer matches 0..5 run scoreboard players set @s disto_swaphands_timer 0
 
-# clear witeout & flagging tape entities if block broken
+# clear witeout and flagging tape entities if block broken
 execute as @a at @e[tag=witeout_blot_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.01 #survey:raycast_transparent run function survey:witeout/break
 execute as @a at @e[tag=flagging_tape_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.001 #survey:raycast_transparent run function survey:flagging_tape/break
 
