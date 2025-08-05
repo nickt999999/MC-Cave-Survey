@@ -10,7 +10,6 @@ scoreboard objectives remove 50
 scoreboard objectives remove 100
 scoreboard objectives remove 1000
 scoreboard objectives remove max_command_chain_length
-scoreboard objectives remove click_carrot_stick
 scoreboard objectives remove click_writable_book
 scoreboard objectives remove uninstall_timer
 scoreboard objectives remove current_gametime
@@ -70,6 +69,7 @@ scoreboard objectives remove disto_error
 scoreboard objectives remove disto_cooldown
 scoreboard objectives remove disto_swaphands_timer
 # remove witeout objectives
+scoreboard objectives remove witeout_cooldown_gametime
 scoreboard objectives remove witeout_raycast_steps
 scoreboard objectives remove witeout_damage
 scoreboard objectives remove clear_witeout_timer

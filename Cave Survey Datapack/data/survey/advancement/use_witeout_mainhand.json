@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": {
+          "slots": {
+            "weapon.mainhand": {
+              "items": "minecraft:music_disc_lava_chicken",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "witeout": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "survey:witeout/use/use_witeout_mainhand"
+  }
+}

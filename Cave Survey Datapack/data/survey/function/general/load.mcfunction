@@ -8,7 +8,6 @@ scoreboard objectives add 50 dummy
 scoreboard objectives add 100 dummy
 scoreboard objectives add 1000 dummy
 scoreboard objectives add max_command_chain_length dummy
-scoreboard objectives add click_carrot_stick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add click_writable_book minecraft.used:minecraft.writable_book
 scoreboard objectives add uninstall_timer dummy
 scoreboard objectives add current_gametime dummy
@@ -24,6 +23,7 @@ scoreboard objectives add survey.give_witeout trigger
 scoreboard objectives add survey.help trigger
 scoreboard objectives add survey.uninstall trigger
 # add disto objectives
+scoreboard objectives add disto_cooldown_gametime dummy
 scoreboard objectives add disto_raycast_steps dummy
 scoreboard objectives add disto_forwards_raycast_steps dummy
 scoreboard objectives add disto_backwards_raycast_steps dummy
@@ -65,9 +65,11 @@ scoreboard objectives add disto_distance_history_1 dummy
 scoreboard objectives add disto_distance_history_2 dummy
 scoreboard objectives add disto_distance_history_3 dummy
 scoreboard objectives add disto_error dummy
+# TEMP remove
 scoreboard objectives add disto_cooldown dummy
 scoreboard objectives add disto_swaphands_timer dummy
 # add witeout objectives
+scoreboard objectives add witeout_cooldown_gametime dummy
 scoreboard objectives add witeout_raycast_steps dummy
 scoreboard objectives add witeout_damage dummy
 scoreboard objectives add clear_witeout_timer dummy

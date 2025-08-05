@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": {
+          "slots": {
+            "weapon.offhand": {
+              "items": "minecraft:music_disc_lava_chicken",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "disto": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "survey:disto/use/use_disto_offhand"
+  }
+}
