@@ -22,7 +22,6 @@
                 "disto": true,
                 "disto_id": false,
                 "backsight_mode": false,
-                "survey_tool": true,
                 "survey_datapack": true
             }
         }

@@ -6,8 +6,7 @@ execute if data storage survey:data {disto:{shot:{origin:"center"}}} run playsou
 execute if data storage survey:data {disto:{shot:{origin:"eyes"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 1.587401
 execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} run playsound block.note_block.bit master @a ~ ~ ~ 0.5 2
 # store shot output in storage path
-execute if data storage survey:data {disto:{shot:{slot:"mainhand"}}} run function survey:disto/use/triple_shot/store_shot with entity @s SelectedItem.components."minecraft:custom_data"
-execute if data storage survey:data {disto:{shot:{slot:"offhand"}}} run function survey:disto/use/triple_shot/store_shot with entity @s equipment.offhand.components."minecraft:custom_data"
+function survey:disto/use/triple_shot/store_shot with storage survey:data disto.shot
 # queue triple shot beep if last 3 shots match
 execute if data storage survey:data {disto:{shot:{shot_in_range:1b}}} if function survey:disto/use/triple_shot/if_match run function survey:disto/use/triple_shot/queue_beep
 

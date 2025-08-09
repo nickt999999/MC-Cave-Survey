@@ -1,2 +1,2 @@
 # replace item and set disto id from counter
-$item replace entity @s container.$(slot) with minecraft:music_disc_lava_chicken[!minecraft:jukebox_playable,minecraft:consumable={consume_seconds:2147483647},minecraft:item_name="Disto-X2",minecraft:item_model="survey:disto",minecraft:custom_data={disto:1b,disto_id:$(counter),backsight_mode:0b,survey_tool:1b,survey_datapack:1b}]
+$item replace entity @s container.$(slot) with minecraft:music_disc_lava_chicken[!minecraft:jukebox_playable,minecraft:consumable={consume_seconds:2147483647},minecraft:item_name="Disto-X2",minecraft:item_model="survey:disto",minecraft:custom_data={disto:1b,disto_id:$(counter),backsight_mode:0b,survey_datapack:1b}]

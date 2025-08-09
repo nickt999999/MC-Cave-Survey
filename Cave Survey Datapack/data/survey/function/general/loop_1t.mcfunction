@@ -8,8 +8,7 @@ execute if score @s survey.give_witeout matches 1.. run function survey:command/
 execute if score @s survey.help matches 1.. run function survey:command/help
 execute if score @s survey.uninstall matches 1.. run function survey:command/uninstall
 
-# update disto timers (*TEMP should move away from disto_swaphands_timer and use schedule and gametime query)
-#scoreboard players remove @s[scores={disto_cooldown=1..20}] disto_cooldown 1  (TEMP REMOVE)
+# update disto timers
 execute if score @s disto_swaphands_timer matches 1..5 run scoreboard players remove @s disto_swaphands_timer 1
 # toggle backsight mode if player swaps hands with disto twice
 execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b}] if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode

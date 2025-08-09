@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "using_witeout": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": "minecraft:music_disc_lava_chicken",
+                    "predicates": {
+                        "minecraft:custom_data": {
+                            "witeout": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "survey:witeout/use/click_witeout"
+    }
+}

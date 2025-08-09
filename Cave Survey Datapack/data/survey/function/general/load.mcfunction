@@ -65,8 +65,6 @@ scoreboard objectives add disto_distance_history_1 dummy
 scoreboard objectives add disto_distance_history_2 dummy
 scoreboard objectives add disto_distance_history_3 dummy
 scoreboard objectives add disto_error dummy
-# TEMP remove
-scoreboard objectives add disto_cooldown dummy
 scoreboard objectives add disto_swaphands_timer dummy
 # add witeout objectives
 scoreboard objectives add witeout_cooldown_gametime dummy

@@ -1,5 +1,3 @@
-# store slot in storage path (TEMP)
-#$data modify storage survey:data disto.shot.slot set value $(slot)
 # raycast from player's eyes
 execute anchored eyes positioned ^ ^ ^ run function survey:disto/use/eyes_origin/raycast
 
@@ -44,8 +42,7 @@ kill @e[tag=disto_intended_target_pos,type=marker,distance=..260]
 kill @e[tag=align_pos,type=marker,distance=..260]
 
 # set 20 tick cooldown
-execute store result score @s disto_cooldown run time query gametime
-scoreboard players add @s disto_cooldown 20
+execute store result score @s disto_cooldown_gametime run time query gametime
+scoreboard players add @s disto_cooldown_gametime 20
 schedule function survey:disto/use/disable_cooldown 20t append
-# TEMP - make sure we >= rather than = incase someone uses then quickly quits
-scoreboard players set @s disto_cooldown 20
+scoreboard players set @s disto_cooldown_gametime 20

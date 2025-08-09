@@ -12,7 +12,6 @@
             "minecraft:item_model": "survey:flagging_tape",
             "minecraft:custom_data": {
                 "flagging_tape": true,
-                "survey_tool": true,
                 "survey_datapack": true
             }
         }

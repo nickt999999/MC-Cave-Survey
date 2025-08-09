@@ -66,7 +66,6 @@ scoreboard objectives remove disto_distance_history_1
 scoreboard objectives remove disto_distance_history_2
 scoreboard objectives remove disto_distance_history_3
 scoreboard objectives remove disto_error
-scoreboard objectives remove disto_cooldown
 scoreboard objectives remove disto_swaphands_timer
 # remove witeout objectives
 scoreboard objectives remove witeout_cooldown_gametime
