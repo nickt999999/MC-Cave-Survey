@@ -8,21 +8,26 @@ execute if score @s survey.give_witeout matches 1.. run function survey:command/
 execute if score @s survey.help matches 1.. run function survey:command/help
 execute if score @s survey.uninstall matches 1.. run function survey:command/uninstall
 
-# update disto timers
-execute if score @s disto_swaphands_timer matches 1..5 run scoreboard players remove @s disto_swaphands_timer 1
 # toggle backsight mode if player swaps hands with disto twice
+execute if score @s disto_swaphands_timer matches 1..5 run scoreboard players remove @s disto_swaphands_timer 1
 execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b}] if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
+# update disto rclick tags
+execute unless entity @s[tag=rclick_disto_tick] run tag @s remove rclick_disto_hold
+tag @s remove rclick_disto_tick
 # set new disto item id 
 execute if data entity @s Inventory[{id:"minecraft:music_disc_lava_chicken",components:{"minecraft:custom_data":{disto:1b,disto_id:0b}}}] run function survey:disto/id/set_item_id
 
-# process flagging tape if player holding flagging tape
-execute at @s if items entity @s weapon.mainhand writable_book[minecraft:custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"mainhand",item:"writable_book"}
-execute at @s if items entity @s weapon.mainhand written_book[minecraft:custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"mainhand",item:"written_book"}
-execute at @s if items entity @s weapon.offhand writable_book[minecraft:custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"offhand",item:"writable_book"}
-execute at @s if items entity @s weapon.offhand written_book[minecraft:custom_data~{flagging_tape:1b}] run function survey:flagging_tape/use/hold_item {slot:"offhand",item:"written_book"}
+# update/use flagging tape if player holding item
+execute if items entity @s weapon.* *[minecraft:custom_data~{flagging_tape:1b}] at @s run function survey:flagging_tape/use/hold_item
+# reset right click item objective
+execute if score @s click_writable_book matches 1.. run scoreboard players set @s click_writable_book 0
 
-# update headlamp light
-execute at @s run function survey:headlamp/update_light
+# remove headlamp light from previous tick
+execute at @s run function survey:headlamp/remove_light
+# add headlamp light if player holding/wearing headlamp
+execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
+execute if items entity @s armor.head minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
 
-# reset player right click objectives
-scoreboard players set @s[scores={click_writable_book=1..}] click_writable_book 0
+# update witeout rclick tags
+execute unless entity @s[tag=rclick_witeout_tick] run tag @s remove rclick_witeout_hold
+tag @s remove rclick_witeout_tick

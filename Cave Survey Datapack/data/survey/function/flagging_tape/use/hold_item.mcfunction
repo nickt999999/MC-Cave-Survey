@@ -1,7 +1,8 @@
 # store slot and item in storage path
-$data modify storage survey:data flagging_tape.slot set value $(slot)
-# TEMP - check if slot is needed in storage path
-$data modify storage survey:data flagging_tape.item set value '$(item)'
+execute if items entity @s weapon.mainhand minecraft:writable_book[minecraft:custom_data~{flagging_tape:1b}] run data merge storage survey:data {flagging_tape:{slot:"mainhand",item:"minecraft:writable_book"}}
+execute if items entity @s weapon.mainhand minecraft:written_book[minecraft:custom_data~{flagging_tape:1b}] run data merge storage survey:data {flagging_tape:{slot:"mainhand",item:"minecraft:written_book"}}
+execute if items entity @s weapon.offhand minecraft:writable_book[minecraft:custom_data~{flagging_tape:1b}] unless items entity @s weapon.mainhand *[minecraft:custom_data~{flagging_tape:1b}] run data merge storage survey:data {flagging_tape:{slot:"offhand",item:"minecraft:writable_book"}}
+execute if items entity @s weapon.offhand minecraft:written_book[minecraft:custom_data~{flagging_tape:1b}] unless items entity @s weapon.mainhand *[minecraft:custom_data~{flagging_tape:1b}] run data merge storage survey:data {flagging_tape:{slot:"offhand",item:"minecraft:written_book"}}
 
 # 4.5-5m range raycast if player right click item or item text written
 execute if score @s click_writable_book matches 1.. run function survey:flagging_tape/use/raycast

@@ -1,6 +1,6 @@
 {
     "criteria": {
-        "using_witeout": {
+        "rclick_witeout": {
             "trigger": "minecraft:using_item",
             "conditions": {
                 "item": {
@@ -15,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "survey:witeout/use/click_witeout"
+        "function": "survey:witeout/use/rclick_witeout"
     }
 }

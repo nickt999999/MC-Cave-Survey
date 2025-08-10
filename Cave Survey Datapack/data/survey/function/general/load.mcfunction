@@ -23,6 +23,8 @@ scoreboard objectives add survey.give_witeout trigger
 scoreboard objectives add survey.help trigger
 scoreboard objectives add survey.uninstall trigger
 # add disto objectives
+scoreboard objectives add disto_id_counter dummy
+scoreboard objectives add disto_swaphands_timer dummy
 scoreboard objectives add disto_cooldown_gametime dummy
 scoreboard objectives add disto_raycast_steps dummy
 scoreboard objectives add disto_forwards_raycast_steps dummy
@@ -54,7 +56,6 @@ scoreboard objectives add disto_distance_whole dummy
 scoreboard objectives add disto_distance_decimal_1 dummy
 scoreboard objectives add disto_distance_decimal_2 dummy
 scoreboard objectives add disto_distance_decimal_3 dummy
-scoreboard objectives add disto_id_counter dummy
 scoreboard objectives add disto_inclination_history_1 dummy
 scoreboard objectives add disto_inclination_history_2 dummy
 scoreboard objectives add disto_inclination_history_3 dummy
@@ -65,7 +66,6 @@ scoreboard objectives add disto_distance_history_1 dummy
 scoreboard objectives add disto_distance_history_2 dummy
 scoreboard objectives add disto_distance_history_3 dummy
 scoreboard objectives add disto_error dummy
-scoreboard objectives add disto_swaphands_timer dummy
 # add witeout objectives
 scoreboard objectives add witeout_cooldown_gametime dummy
 scoreboard objectives add witeout_raycast_steps dummy

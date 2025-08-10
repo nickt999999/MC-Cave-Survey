@@ -1,6 +1,6 @@
 {
     "criteria": {
-        "using_disto": {
+        "rclick_disto": {
             "trigger": "minecraft:using_item",
             "conditions": {
                 "item": {
@@ -15,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "survey:disto/use/click_disto"
+        "function": "survey:disto/use/rclick_disto"
     }
 }

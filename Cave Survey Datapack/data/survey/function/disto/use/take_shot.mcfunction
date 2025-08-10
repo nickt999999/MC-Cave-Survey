@@ -40,9 +40,3 @@ kill @e[tag=disto_origin_pos,type=marker,distance=..4]
 kill @e[tag=disto_range_test_pos,type=marker,distance=..260]
 kill @e[tag=disto_intended_target_pos,type=marker,distance=..260]
 kill @e[tag=align_pos,type=marker,distance=..260]
-
-# set 20 tick cooldown
-execute store result score @s disto_cooldown_gametime run time query gametime
-scoreboard players add @s disto_cooldown_gametime 20
-schedule function survey:disto/use/disable_cooldown 20t append
-scoreboard players set @s disto_cooldown_gametime 20
