@@ -5,8 +5,8 @@ advancement revoke @s only survey:rclick_witeout
 tag @s add rclick_witeout_tick
 execute if entity @s[tag=rclick_witeout_hold] run return 0
 tag @s add rclick_witeout_hold
-# prevent use if within cooldown (TEMP re-enable)
-#execute if score @s witeout_cooldown_gametime matches 0.. run return 0
+# prevent use if within cooldown
+execute if score @s witeout_cooldown_gametime matches 0.. run return 0
 
 # else - use item
 execute if items entity @s weapon.mainhand minecraft:music_disc_lava_chicken[minecraft:custom_data~{witeout:1b}] run data modify storage survey:data witeout.slot set value "mainhand"
