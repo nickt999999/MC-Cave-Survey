@@ -15,9 +15,9 @@ scoreboard players enable @a survey.help
 execute as @a[tag=survey.op] unless score @s survey.clear_flagging_tape matches 0.. run function survey:general/enable_op_commands
 execute as @a[tag=!survey.op] if score @s survey.clear_flagging_tape matches 0.. run function survey:general/disable_op_commands
 # update confirm command timers
-execute as @a if score @s uninstall_timer matches 1..200 run scoreboard players remove @s uninstall_timer 20
-execute as @a if score @s clear_witeout_timer matches 1..200 run scoreboard players remove @s clear_witeout_timer 20
 execute as @a if score @s clear_flagging_tape_timer matches 1..200 run scoreboard players remove @s clear_flagging_tape_timer 20
+execute as @a if score @s clear_witeout_timer matches 1..200 run scoreboard players remove @s clear_witeout_timer 20
+execute as @a if score @s uninstall_timer matches 1..300 run scoreboard players remove @s uninstall_timer 20
 
 # give survey recipes
 recipe give @a survey:disto
