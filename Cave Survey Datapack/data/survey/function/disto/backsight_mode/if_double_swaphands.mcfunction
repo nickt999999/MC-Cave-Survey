@@ -1,3 +1,5 @@
+# TEMP check
+
 # store item data in storage path
 execute store result storage survey:data disto.backsight_mode.new_mode byte 1 if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{backsight_mode:0b}]
 execute if items entity @s weapon.mainhand minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b}] run data modify storage survey:data disto.backsight_mode.slot set value "mainhand"

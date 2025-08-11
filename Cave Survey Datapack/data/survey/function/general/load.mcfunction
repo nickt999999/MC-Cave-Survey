@@ -26,6 +26,7 @@ scoreboard objectives add survey.uninstall trigger
 scoreboard objectives add disto_id_counter dummy
 scoreboard objectives add disto_swaphands_timer dummy
 scoreboard objectives add disto_cooldown_gametime dummy
+scoreboard objectives add disto_triple_shot_beep_gametime dummy
 scoreboard objectives add disto_raycast_steps dummy
 scoreboard objectives add disto_forwards_raycast_steps dummy
 scoreboard objectives add disto_backwards_raycast_steps dummy

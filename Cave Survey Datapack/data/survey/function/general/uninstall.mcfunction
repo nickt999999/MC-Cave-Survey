@@ -28,6 +28,7 @@ scoreboard objectives remove survey.uninstall
 scoreboard objectives remove disto_id_counter
 scoreboard objectives remove disto_swaphands_timer
 scoreboard objectives remove disto_cooldown_gametime
+scoreboard objectives remove disto_triple_shot_beep_gametime
 scoreboard objectives remove disto_raycast_steps
 scoreboard objectives remove disto_forwards_raycast_steps
 scoreboard objectives remove disto_backwards_raycast_steps
@@ -100,6 +101,9 @@ tag @a remove disto_mainhand
 tag @a remove disto_offhand
 tag @a remove rclick_disto_tick
 tag @a remove rclick_disto_hold
+tag @a remove disto_triple_shot_beep_center
+tag @a remove disto_triple_shot_beep_eyes
+tag @s remove disto_triple_shot_beep_witeout
 tag @a remove survey.op
 
 # remove storage data

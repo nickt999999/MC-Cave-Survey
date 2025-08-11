@@ -1,6 +1,6 @@
 # get shot inclination and rotation
-execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{"backsight_mode":0b}] store result score #survey disto_inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] -1000
-execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{"backsight_mode":1b}] store result score #survey disto_inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] 1000
+execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} store result score #survey disto_inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] -1000
+execute if data storage survey:data {disto:{shot:{backsight_mode:1b}}} store result score #survey disto_inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] 1000
 # calculate absolute value for floor rounding
 scoreboard players operation #survey disto_inclination_abs = #survey disto_inclination
 execute if score #survey disto_inclination matches -2147483648..0 run scoreboard players operation #survey disto_inclination_abs *= #survey -1
@@ -23,8 +23,8 @@ execute if score #survey disto_inclination matches -89999..89998 store result sc
 execute unless score #survey disto_inclination matches -89999..89998 store result score #survey disto_azimuth run data get entity @s Rotation[0] 1000
 execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} at @e[tag=disto_origin_pos,type=marker,distance=..4] if entity @e[tag=disto_target_pos,distance=..0.01,type=marker] store result score #survey disto_azimuth run data get entity @s Rotation[0] 1000
 # apply rotation
-execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{"backsight_mode":0b}] run scoreboard players add #survey disto_azimuth 180000
-execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{"backsight_mode":1b}] if score #survey disto_azimuth matches -180000..-1 run scoreboard players add #survey disto_azimuth 360000
+execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} run scoreboard players add #survey disto_azimuth 180000
+execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} if score #survey disto_azimuth matches -180000..-1 run scoreboard players add #survey disto_azimuth 360000
 # calculate azimuth display objectives
 scoreboard players operation #survey disto_azimuth_decimal_3 = #survey disto_azimuth
 scoreboard players operation #survey disto_azimuth_decimal_3 %= #survey 10

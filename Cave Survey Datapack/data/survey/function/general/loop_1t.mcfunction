@@ -15,7 +15,7 @@ execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:
 execute unless entity @s[tag=rclick_disto_tick] run tag @s remove rclick_disto_hold
 tag @s remove rclick_disto_tick
 # set new disto item id 
-execute if data entity @s Inventory[{id:"minecraft:music_disc_lava_chicken",components:{"minecraft:custom_data":{disto:1b,disto_id:0b}}}] run function survey:disto/id/set_item_id
+execute if items entity @s container.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b,disto_id:0b}] run function survey:disto/id/set_item_id
 
 # update/use flagging tape if player holding item
 execute if items entity @s weapon.* *[minecraft:custom_data~{flagging_tape:1b}] at @s run function survey:flagging_tape/use/hold_item
