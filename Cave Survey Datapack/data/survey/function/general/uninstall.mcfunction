@@ -27,6 +27,7 @@ scoreboard objectives remove survey.uninstall
 # remove disto objectives
 scoreboard objectives remove disto_id_counter
 scoreboard objectives remove disto_swaphands_timer
+scoreboard objectives remove disto_change_backsight_mode_timer
 scoreboard objectives remove disto_cooldown_gametime
 scoreboard objectives remove disto_triple_shot_beep_gametime
 scoreboard objectives remove disto_raycast_steps
@@ -69,12 +70,6 @@ scoreboard objectives remove disto_distance_history_1
 scoreboard objectives remove disto_distance_history_2
 scoreboard objectives remove disto_distance_history_3
 scoreboard objectives remove disto_error
-# remove witeout objectives
-scoreboard objectives remove witeout_cooldown_gametime
-scoreboard objectives remove witeout_raycast_steps
-scoreboard objectives remove witeout_damage
-scoreboard objectives remove clear_witeout_timer
-scoreboard objectives remove witeout_blot_count
 # remove flagging tape objectives
 scoreboard objectives remove flagging_tape_raycast_steps
 scoreboard objectives remove flagging_tape_x
@@ -95,8 +90,14 @@ scoreboard objectives remove headlamp_raycast_steps
 scoreboard objectives remove place_light_counter_x
 scoreboard objectives remove place_light_counter_y
 scoreboard objectives remove place_light_counter_z
+# remove witeout objectives
+scoreboard objectives remove witeout_cooldown_gametime
+scoreboard objectives remove witeout_raycast_steps
+scoreboard objectives remove witeout_damage
+scoreboard objectives remove clear_witeout_timer
+scoreboard objectives remove witeout_blot_count
 
-# remove tags (*online players only)
+# remove tags (online players only)
 tag @a remove disto_mainhand
 tag @a remove disto_offhand
 tag @a remove rclick_disto_tick
@@ -105,12 +106,11 @@ tag @a remove disto_triple_shot_beep_center
 tag @a remove disto_triple_shot_beep_eyes
 tag @s remove disto_triple_shot_beep_witeout
 tag @a remove survey.op
-
 # remove storage data
 data remove storage survey:data general
 data remove storage survey:data disto
-data remove storage survey:data witeout
 data remove storage survey:data flagging_tape
+data remove storage survey:data witeout
 # remove headlamp light
 function survey:headlamp/remove_light
 

@@ -9,8 +9,7 @@ execute if score @s survey.help matches 1.. run function survey:command/help
 execute if score @s survey.uninstall matches 1.. run function survey:command/uninstall
 
 # toggle backsight mode if player swaps hands with disto twice
-execute if score @s disto_swaphands_timer matches 1..5 run scoreboard players remove @s disto_swaphands_timer 1
-execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b}] if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
+execute if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
 # update disto rclick tags
 execute unless entity @s[tag=rclick_disto_tick] run tag @s remove rclick_disto_hold
 tag @s remove rclick_disto_tick

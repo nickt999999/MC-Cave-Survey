@@ -25,6 +25,7 @@ scoreboard objectives add survey.uninstall trigger
 # add disto objectives
 scoreboard objectives add disto_id_counter dummy
 scoreboard objectives add disto_swaphands_timer dummy
+scoreboard objectives add disto_change_backsight_mode_timer dummy
 scoreboard objectives add disto_cooldown_gametime dummy
 scoreboard objectives add disto_triple_shot_beep_gametime dummy
 scoreboard objectives add disto_raycast_steps dummy
@@ -67,12 +68,6 @@ scoreboard objectives add disto_distance_history_1 dummy
 scoreboard objectives add disto_distance_history_2 dummy
 scoreboard objectives add disto_distance_history_3 dummy
 scoreboard objectives add disto_error dummy
-# add witeout objectives
-scoreboard objectives add witeout_cooldown_gametime dummy
-scoreboard objectives add witeout_raycast_steps dummy
-scoreboard objectives add witeout_damage dummy
-scoreboard objectives add clear_witeout_timer dummy
-scoreboard objectives add witeout_blot_count dummy
 # add flagging tape objectives
 scoreboard objectives add flagging_tape_raycast_steps dummy
 scoreboard objectives add flagging_tape_x dummy
@@ -93,6 +88,12 @@ scoreboard objectives add headlamp_raycast_steps dummy
 scoreboard objectives add place_light_counter_x dummy
 scoreboard objectives add place_light_counter_y dummy
 scoreboard objectives add place_light_counter_z dummy
+# add witeout objectives
+scoreboard objectives add witeout_cooldown_gametime dummy
+scoreboard objectives add witeout_raycast_steps dummy
+scoreboard objectives add witeout_damage dummy
+scoreboard objectives add clear_witeout_timer dummy
+scoreboard objectives add witeout_blot_count dummy
 
 # set constant objectives
 scoreboard players set #survey -1 -1
@@ -105,9 +106,9 @@ scoreboard players set #survey 1000 1000
 execute store result score #survey disto_id_counter run random value 0..2147483646
 
 # display error message if low maxCommandChainLength
-execute store result score @p max_command_chain_length run gamerule maxCommandChainLength
-execute unless score @p max_command_chain_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low maxCommandChainLength value detected - this may interfere with the cave survey datapack. It's reccomended to reset maxCommandChainLength to its default value using ","color":"red"},{"text":"/gamerule maxCommandChainLength 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule maxCommandChainLength 65536"}}]
-scoreboard players reset @p max_command_chain_length
+execute store result score #survey max_command_chain_length run gamerule maxCommandChainLength
+execute unless score #survey max_command_chain_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low maxCommandChainLength value detected - this may interfere with the cave survey datapack. It's reccomended to reset maxCommandChainLength to its default value using ","color":"red"},{"text":"/gamerule maxCommandChainLength 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule maxCommandChainLength 65536"}}]
+scoreboard players reset #survey max_command_chain_length
 
 # start 20t loop
 schedule function survey:general/loop_20t 20t
