@@ -1,5 +1,3 @@
-# store slot in storage path
-$data modify storage survey:data disto.shot.slot set value $(slot)
 # raycast from player's eyes
 execute anchored eyes positioned ^ ^ ^ run function survey:disto/use/eyes_origin/raycast
 
@@ -42,5 +40,3 @@ kill @e[tag=disto_origin_pos,type=marker,distance=..4]
 kill @e[tag=disto_range_test_pos,type=marker,distance=..260]
 kill @e[tag=disto_intended_target_pos,type=marker,distance=..260]
 kill @e[tag=align_pos,type=marker,distance=..260]
-# set item cooldown counter
-scoreboard players set @s disto_cooldown 20

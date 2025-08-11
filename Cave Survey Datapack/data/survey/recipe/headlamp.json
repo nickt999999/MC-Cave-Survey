@@ -6,18 +6,19 @@
         "minecraft:string"
     ],
     "result": {
-        "id": "minecraft:carrot_on_a_stick",
+        "id": "minecraft:music_disc_lava_chicken",
         "components": {
-            "item_name": "Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",
-            "item_model": "survey:headlamp",
-            "custom_data": {
-                "headlamp": true,
-                "survey_datapack": true
-            },
-            "equippable": {
+            "!minecraft:jukebox_playable": {},
+            "minecraft:equippable": {
                 "slot": "head",
                 "damage_on_hurt": false
-        }
+            },
+            "minecraft:item_name": "Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",
+            "minecraft:item_model": "survey:headlamp",
+            "minecraft:custom_data": {
+                "headlamp": true,
+                "survey_datapack": true
+            }
         }
     }
 }

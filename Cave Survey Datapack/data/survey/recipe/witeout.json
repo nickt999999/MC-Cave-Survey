@@ -6,16 +6,19 @@
         "minecraft:white_dye"
     ],
     "result": {
-        "id": "minecraft:carrot_on_a_stick",
+        "id": "minecraft:music_disc_lava_chicken",
         "components": {
-            "item_name": "Wite-Out",
-            "item_model": "survey:witeout",
-            "custom_data": {
-                "witeout": true,
-                "survey_tool": true,
-                "survey_datapack": true
+            "!minecraft:jukebox_playable": {},
+            "minecraft:consumable": {
+                "consume_seconds":2147483647
             },
-            "max_damage": 70
+            "minecraft:max_damage": 70,
+            "minecraft:item_name": "Wite-Out",
+            "minecraft:item_model": "survey:witeout",
+            "minecraft:custom_data": {
+                "witeout": true,
+                "survey_datapack": true
+            }
         }
     }
 }
