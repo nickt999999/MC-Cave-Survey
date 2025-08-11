@@ -22,7 +22,7 @@ execute if items entity @s weapon.* *[minecraft:custom_data~{flagging_tape:1b}] 
 execute if score @s click_writable_book matches 1.. run scoreboard players set @s click_writable_book 0
 
 # remove headlamp light from previous tick
-execute at @s run function survey:headlamp/remove_light
+execute at @s run function survey:headlamp/use/remove_light
 # add headlamp light if player holding/wearing headlamp
 execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
 execute if items entity @s armor.head minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light

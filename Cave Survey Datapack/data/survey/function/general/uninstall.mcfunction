@@ -85,11 +85,8 @@ scoreboard objectives remove flagging_tape_char_end_index
 scoreboard objectives remove flagging_tape_damage
 scoreboard objectives remove clear_flagging_tape_timer
 scoreboard objectives remove flagging_tape_count
-# remove headlamp objectives
+# remove headlamp objective
 scoreboard objectives remove headlamp_raycast_steps
-scoreboard objectives remove place_light_counter_x
-scoreboard objectives remove place_light_counter_y
-scoreboard objectives remove place_light_counter_z
 # remove witeout objectives
 scoreboard objectives remove witeout_cooldown_gametime
 scoreboard objectives remove witeout_raycast_steps
@@ -112,7 +109,7 @@ data remove storage survey:data disto
 data remove storage survey:data flagging_tape
 data remove storage survey:data witeout
 # remove headlamp light
-function survey:headlamp/remove_light
+function survey:headlamp/remove_world_light
 
 # display uninstall text
 tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/Cave Survey Datapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/Cave Survey Datapack\""}},{"text":" to re-enable"}]

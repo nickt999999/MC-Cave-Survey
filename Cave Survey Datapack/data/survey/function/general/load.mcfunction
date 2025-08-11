@@ -83,11 +83,8 @@ scoreboard objectives add flagging_tape_char_end_index dummy
 scoreboard objectives add flagging_tape_damage dummy
 scoreboard objectives add clear_flagging_tape_timer dummy
 scoreboard objectives add flagging_tape_count dummy
-# add headlamp objectives
+# add headlamp objective
 scoreboard objectives add headlamp_raycast_steps dummy
-scoreboard objectives add place_light_counter_x dummy
-scoreboard objectives add place_light_counter_y dummy
-scoreboard objectives add place_light_counter_z dummy
 # add witeout objectives
 scoreboard objectives add witeout_cooldown_gametime dummy
 scoreboard objectives add witeout_raycast_steps dummy
