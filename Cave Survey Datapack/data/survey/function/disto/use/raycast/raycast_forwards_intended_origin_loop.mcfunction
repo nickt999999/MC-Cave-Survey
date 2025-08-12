@@ -5,6 +5,6 @@ execute positioned ~0.0001 ~0.0001 ~0.0001 as @e[dx=0,tag=!self,type=!marker,dis
 # end raycast if block
 execute unless block ~ ~ ~ #survey:raycast_transparent run return run function survey:disto/use/raycast/end {result:"shot_intersect"}
 # increment raycast step counter
-scoreboard players add #survey disto_raycast_steps 1
+scoreboard players add #survey survey.disto.raycast_steps 1
 # loop raycast forwards
 execute facing entity @e[tag=disto_target_pos,limit=1,type=marker,distance=..260] eyes positioned ^ ^ ^0.1 run function survey:disto/use/raycast/raycast_forwards_intended_origin_loop

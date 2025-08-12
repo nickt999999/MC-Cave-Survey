@@ -9,6 +9,6 @@ $data modify storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot
 $data modify storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_2[1] set from storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[1]
 $data modify storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_2[2] set from storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[2]
 # set history path shot 1 from current shot
-$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[0] int 1 run scoreboard players get #survey disto_azimuth
-$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[1] int 1 run scoreboard players get #survey disto_inclination
-$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[2] int 1 run scoreboard players get #survey disto_distance
+$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[0] int 1 run scoreboard players get #survey survey.disto.azimuth
+$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[1] int 1 run scoreboard players get #survey survey.disto.inclination
+$execute store result storage survey:data disto.shot.history[{disto_id:$(disto_id)}].shot_1[2] int 1 run scoreboard players get #survey survey.disto.distance

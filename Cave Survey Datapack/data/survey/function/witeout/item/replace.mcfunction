@@ -1,2 +1,2 @@
-# replace item with damage from storage path
+# replace item
 $item replace entity @s weapon.$(slot) with minecraft:music_disc_lava_chicken[!minecraft:jukebox_playable,minecraft:consumable={consume_seconds:2147483647},minecraft:max_damage=70,minecraft:damage=$(damage),minecraft:item_name="Wite-Out",minecraft:item_model="survey:witeout",minecraft:custom_data={witeout:1b,survey_datapack:1b}]

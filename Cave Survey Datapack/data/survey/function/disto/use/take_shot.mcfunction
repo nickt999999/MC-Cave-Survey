@@ -37,6 +37,6 @@ tag @s remove self
 kill @e[tag=raycast_target_pos,type=marker,distance=..260]
 kill @e[tag=disto_target_pos,type=marker,distance=..260]
 kill @e[tag=disto_origin_pos,type=marker,distance=..4]
-kill @e[tag=disto_range_test_pos,type=marker,distance=..260]
+kill @e[tag=survey.disto.range_test_pos,type=marker,distance=..260]
 kill @e[tag=disto_intended_target_pos,type=marker,distance=..260]
 kill @e[tag=align_pos,type=marker,distance=..260]

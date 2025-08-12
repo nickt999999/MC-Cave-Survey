@@ -1,6 +1,6 @@
 # reset timers
-scoreboard players set @s disto_swaphands_timer 0
-scoreboard players set @s disto_change_backsight_mode_timer 10
+scoreboard players set @s survey.disto.swaphands_timer 0
+scoreboard players set @s survey.disto.change_backsight_mode_timer 10
 
 # replace item with updated backsight mode
 $item replace entity @s weapon.$(slot) with music_disc_lava_chicken[!minecraft:jukebox_playable,minecraft:consumable={consume_seconds:2147483647},minecraft:item_name="Disto-X2",minecraft:item_model="survey:disto",minecraft:custom_data={disto:1b,disto_id:$(disto_id),backsight_mode:$(new_mode)b,survey_datapack:1b}]

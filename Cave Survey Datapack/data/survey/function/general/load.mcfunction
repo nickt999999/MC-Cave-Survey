@@ -1,18 +1,16 @@
 ## from #minecraft:load
 
 # add general objectives
-scoreboard objectives add -1 dummy
-scoreboard objectives add 10 dummy
-scoreboard objectives add 20 dummy
-scoreboard objectives add 50 dummy
-scoreboard objectives add 100 dummy
-scoreboard objectives add 1000 dummy
-scoreboard objectives add max_command_chain_length dummy
-scoreboard objectives add click_writable_book minecraft.used:minecraft.writable_book
-scoreboard objectives add uninstall_timer dummy
-scoreboard objectives add current_gametime dummy
-scoreboard objectives add last_gametime dummy
-scoreboard objectives add gametime_change dummy
+scoreboard objectives add survey.general.-1 dummy
+scoreboard objectives add survey.general.10 dummy
+scoreboard objectives add survey.general.100 dummy
+scoreboard objectives add survey.general.1000 dummy
+scoreboard objectives add survey.general.max_command_sequence_length dummy
+scoreboard objectives add survey.general.click_writable_book minecraft.used:minecraft.writable_book
+scoreboard objectives add survey.general.uninstall_timer dummy
+scoreboard objectives add survey.general.current_gametime dummy
+scoreboard objectives add survey.general.last_gametime dummy
+scoreboard objectives add survey.general.gametime_change dummy
 # add command objectives
 scoreboard objectives add survey.clear_flagging_tape trigger
 scoreboard objectives add survey.clear_witeout trigger
@@ -23,84 +21,86 @@ scoreboard objectives add survey.give_witeout trigger
 scoreboard objectives add survey.help trigger
 scoreboard objectives add survey.uninstall trigger
 # add disto objectives
-scoreboard objectives add disto_id_counter dummy
-scoreboard objectives add disto_swaphands_timer dummy
-scoreboard objectives add disto_change_backsight_mode_timer dummy
-scoreboard objectives add disto_cooldown_gametime dummy
-scoreboard objectives add disto_triple_shot_beep_gametime dummy
-scoreboard objectives add disto_raycast_steps dummy
-scoreboard objectives add disto_forwards_raycast_steps dummy
-scoreboard objectives add disto_backwards_raycast_steps dummy
-scoreboard objectives add disto_intended_origin_forwards_raycast_steps dummy
-scoreboard objectives add disto_range dummy
-scoreboard objectives add disto_forwards_raycast_step_limit dummy
-scoreboard objectives add disto_align_pos_x dummy
-scoreboard objectives add disto_align_pos_y dummy
-scoreboard objectives add disto_align_pos_z dummy
-scoreboard objectives add disto_align_pos_x_decimal_3 dummy
-scoreboard objectives add disto_align_pos_y_decimal_3 dummy
-scoreboard objectives add disto_align_pos_z_decimal_3 dummy
-scoreboard objectives add disto_inclination dummy
-scoreboard objectives add disto_inclination_abs dummy
-scoreboard objectives add disto_inclination_whole dummy
-scoreboard objectives add disto_inclination_decimal_1 dummy
-scoreboard objectives add disto_inclination_decimal_2 dummy
-scoreboard objectives add disto_inclination_decimal_3 dummy
-scoreboard objectives add disto_azimuth dummy
-scoreboard objectives add disto_azimuth_whole dummy
-scoreboard objectives add disto_azimuth_decimal_1 dummy
-scoreboard objectives add disto_azimuth_decimal_2 dummy
-scoreboard objectives add disto_azimuth_decimal_3 dummy
-scoreboard objectives add disto_forwards_distance dummy
-scoreboard objectives add disto_backwards_distance dummy
-scoreboard objectives add disto_distance dummy
-scoreboard objectives add disto_distance_whole dummy
-scoreboard objectives add disto_distance_decimal_1 dummy
-scoreboard objectives add disto_distance_decimal_2 dummy
-scoreboard objectives add disto_distance_decimal_3 dummy
-scoreboard objectives add disto_inclination_history_1 dummy
-scoreboard objectives add disto_inclination_history_2 dummy
-scoreboard objectives add disto_inclination_history_3 dummy
-scoreboard objectives add disto_azimuth_history_1 dummy
-scoreboard objectives add disto_azimuth_history_2 dummy
-scoreboard objectives add disto_azimuth_history_3 dummy
-scoreboard objectives add disto_distance_history_1 dummy
-scoreboard objectives add disto_distance_history_2 dummy
-scoreboard objectives add disto_distance_history_3 dummy
-scoreboard objectives add disto_error dummy
+scoreboard objectives add survey.disto.id_counter dummy
+scoreboard objectives add survey.disto.swaphands_timer dummy
+scoreboard objectives add survey.disto.change_backsight_mode_timer dummy
+scoreboard objectives add survey.disto.cooldown_gametime dummy
+scoreboard objectives add survey.disto.triple_shot_beep_gametime dummy
+scoreboard objectives add survey.disto.raycast_steps dummy
+scoreboard objectives add survey.disto.forwards_raycast_steps dummy
+scoreboard objectives add survey.disto.backwards_raycast_steps dummy
+scoreboard objectives add survey.disto.intended_origin_forwards_raycast_steps dummy
+scoreboard objectives add survey.disto.range dummy
+scoreboard objectives add survey.disto.forwards_raycast_step_limit dummy
+scoreboard objectives add survey.disto.align_pos_x dummy
+scoreboard objectives add survey.disto.align_pos_y dummy
+scoreboard objectives add survey.disto.align_pos_z dummy
+scoreboard objectives add survey.disto.align_pos_x_decimal_3 dummy
+scoreboard objectives add survey.disto.align_pos_y_decimal_3 dummy
+scoreboard objectives add survey.disto.align_pos_z_decimal_3 dummy
+scoreboard objectives add survey.disto.inclination dummy
+scoreboard objectives add survey.disto.inclination_abs dummy
+scoreboard objectives add survey.disto.inclination_whole dummy
+scoreboard objectives add survey.disto.inclination_decimal_1 dummy
+scoreboard objectives add survey.disto.inclination_decimal_2 dummy
+scoreboard objectives add survey.disto.inclination_decimal_3 dummy
+scoreboard objectives add survey.disto.azimuth dummy
+scoreboard objectives add survey.disto.azimuth_whole dummy
+scoreboard objectives add survey.disto.azimuth_decimal_1 dummy
+scoreboard objectives add survey.disto.azimuth_decimal_2 dummy
+scoreboard objectives add survey.disto.azimuth_decimal_3 dummy
+scoreboard objectives add survey.disto.forwards_distance dummy
+scoreboard objectives add survey.disto.backwards_distance dummy
+scoreboard objectives add survey.disto.distance dummy
+scoreboard objectives add survey.disto.distance_whole dummy
+scoreboard objectives add survey.disto.distance_decimal_1 dummy
+scoreboard objectives add survey.disto.distance_decimal_2 dummy
+scoreboard objectives add survey.disto.distance_decimal_3 dummy
+scoreboard objectives add survey.disto.inclination_history_1 dummy
+scoreboard objectives add survey.disto.inclination_history_2 dummy
+scoreboard objectives add survey.disto.inclination_history_3 dummy
+scoreboard objectives add survey.disto.azimuth_history_1 dummy
+scoreboard objectives add survey.disto.azimuth_history_2 dummy
+scoreboard objectives add survey.disto.azimuth_history_3 dummy
+scoreboard objectives add survey.disto.distance_history_1 dummy
+scoreboard objectives add survey.disto.distance_history_2 dummy
+scoreboard objectives add survey.disto.distance_history_3 dummy
+scoreboard objectives add survey.disto.error dummy
 # add flagging tape objectives
-scoreboard objectives add flagging_tape_raycast_steps dummy
-scoreboard objectives add flagging_tape_x dummy
-scoreboard objectives add flagging_tape_y dummy
-scoreboard objectives add flagging_tape_z dummy
-scoreboard objectives add flagging_tape_x_decimal dummy
-scoreboard objectives add flagging_tape_y_decimal dummy
-scoreboard objectives add flagging_tape_z_decimal dummy
-scoreboard objectives add player_azimuth dummy
-scoreboard objectives add flagging_tape_text_length dummy
-scoreboard objectives add flagging_tape_char_start_index dummy
-scoreboard objectives add flagging_tape_char_end_index dummy
-scoreboard objectives add flagging_tape_damage dummy
-scoreboard objectives add clear_flagging_tape_timer dummy
-scoreboard objectives add flagging_tape_count dummy
+scoreboard objectives add survey.flagging_tape.raycast_steps dummy
+scoreboard objectives add survey.flagging_tape.x dummy
+scoreboard objectives add survey.flagging_tape.y dummy
+scoreboard objectives add survey.flagging_tape.z dummy
+scoreboard objectives add survey.flagging_tape.x_decimal dummy
+scoreboard objectives add survey.flagging_tape.y_decimal dummy
+scoreboard objectives add survey.flagging_tape.z_decimal dummy
+scoreboard objectives add survey.flagging_tape.player_azimuth dummy
+scoreboard objectives add survey.flagging_tape.text_length dummy
+scoreboard objectives add survey.flagging_tape.char_start_index dummy
+scoreboard objectives add survey.flagging_tape.char_end_index dummy
+scoreboard objectives add survey.flagging_tape.damage dummy
+scoreboard objectives add survey.flagging_tape.clear_timer dummy
+scoreboard objectives add survey.flagging_tape.count dummy
 # add headlamp objective
-scoreboard objectives add headlamp_raycast_steps dummy
+scoreboard objectives add survey.headlamp.raycast_steps dummy
 # add witeout objectives
-scoreboard objectives add witeout_cooldown_gametime dummy
-scoreboard objectives add witeout_raycast_steps dummy
-scoreboard objectives add witeout_damage dummy
-scoreboard objectives add clear_witeout_timer dummy
-scoreboard objectives add witeout_blot_count dummy
+scoreboard objectives add survey.witeout.cooldown_gametime dummy
+scoreboard objectives add survey.witeout.raycast_steps dummy
+scoreboard objectives add survey.witeout.damage dummy
+scoreboard objectives add survey.witeout.clear_timer dummy
+scoreboard objectives add survey.witeout.blot_count dummy
 
 # set constant objectives
-scoreboard players set #survey -1 -1
-scoreboard players set #survey 10 10
-scoreboard players set #survey 20 20
-scoreboard players set #survey 50 50
-scoreboard players set #survey 100 100
-scoreboard players set #survey 1000 1000
+scoreboard players set #survey survey.general.-1 -1
+scoreboard players set #survey survey.general.10 10
+scoreboard players set #survey survey.general.100 100
+scoreboard players set #survey survey.general.1000 1000
 # set initial disto id counter
-execute store result score #survey disto_id_counter run random value 0..2147483646
+execute store result score #survey survey.disto.id_counter run random value 0..2147483646
+# revoke advancements
+advancement revoke @a only survey:add_flagging_tape_to_chiseled_bookshelf
+advancement revoke @a only survey:rclick_disto
+advancement revoke @a only survey:rclick_witeout
 
 # display error message if low maxCommandChainLength
 execute store result score #survey max_command_chain_length run gamerule maxCommandChainLength
