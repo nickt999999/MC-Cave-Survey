@@ -1,7 +1,5 @@
 # end raycast if block
 execute unless block ~ ~ ~ #survey:raycast_transparent run return run function survey:flagging_tape/raycast/end {raycast_result:"block"}
-# end raycast if flagging tape
-execute at @e[tag=flagging_tape,distance=..0.2,type=text_display] run return run function survey:flagging_tape/raycast/end {raycast_result:"flagging_tape"}
 # end raycast if entity hitbox
 execute positioned ~0.0001 ~0.0001 ~0.0001 as @e[dx=0,tag=!self,type=!marker,distance=..30] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,distance=..30] run return run function survey:flagging_tape/raycast/end {raycast_result:"entity"}
 # end raycast if range limit reached
