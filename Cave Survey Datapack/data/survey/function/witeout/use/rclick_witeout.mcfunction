@@ -1,4 +1,4 @@
-# reset advancement
+# revoke advancement
 advancement revoke @s only survey:rclick_witeout
 
 # prevent use if holding rclick

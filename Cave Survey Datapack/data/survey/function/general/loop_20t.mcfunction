@@ -30,7 +30,7 @@ execute as @a unless score @s disto_swaphands_timer matches 0..5 run scoreboard 
 
 # clear witeout and flagging tape entities if block broken
 execute as @a at @e[tag=witeout_blot_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.01 #survey:raycast_transparent run function survey:witeout/break
-execute as @a at @e[tag=flagging_tape_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.001 #survey:raycast_transparent run function survey:flagging_tape/break
+execute as @a at @e[tag=flagging_tape_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.001 #survey:raycast_transparent run function survey:flagging_tape/use/break
 
 # loop function every 20 ticks
 schedule function survey:general/loop_20t 20t

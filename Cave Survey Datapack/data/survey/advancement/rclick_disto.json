@@ -1,4 +1,4 @@
-{
+{  
     "criteria": {
         "rclick_disto": {
             "trigger": "minecraft:using_item",

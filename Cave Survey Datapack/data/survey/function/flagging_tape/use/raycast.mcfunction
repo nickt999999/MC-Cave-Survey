@@ -1,4 +1,4 @@
-# rough forwards direction raycast from player's eyes
+# rough 4.5/5m range forwards direction raycast
 tag @s add self
 execute if entity @s[gamemode=creative] run scoreboard players set #survey flagging_tape_raycast_steps 0
 execute if entity @s[gamemode=!creative] run scoreboard players set #survey flagging_tape_raycast_steps 10

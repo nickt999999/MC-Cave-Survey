@@ -9,7 +9,7 @@ execute if score @s click_writable_book matches 1.. run function survey:flagging
 execute unless score @s click_writable_book matches 1.. if function survey:flagging_tape/text_check/if_text_written run function survey:flagging_tape/use/raycast
 
 # break flagging tape if player right click item and raycast hits flagging tape
-execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/break
+execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/use/break
 
 # new 4.5-5m range raycast if player break flagging tape and valid item text written
 execute if score @s click_writable_book matches 1.. if data storage survey:data {flagging_tape:{raycast_result:"flagging_tape"}} if function survey:flagging_tape/text_check/if_text_written if function survey:flagging_tape/text_check/if_valid_text run function survey:flagging_tape/use/raycast

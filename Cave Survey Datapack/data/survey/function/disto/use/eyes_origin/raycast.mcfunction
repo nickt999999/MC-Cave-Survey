@@ -1,6 +1,6 @@
 # get disto range
 execute store result storage survey:data disto.shot.raycast.range int 1 run function survey:disto/use/eyes_origin/get_range
-# rough forwards direction raycast from player's eyes
+# rough forwards direction raycast
 tag @s add self
 scoreboard players set #survey disto_raycast_steps 0
 function survey:disto/use/raycast/raycast_forwards_eyes_origin_loop
