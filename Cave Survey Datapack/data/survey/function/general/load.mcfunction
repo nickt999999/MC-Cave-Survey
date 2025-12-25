@@ -102,10 +102,10 @@ advancement revoke @a only survey:add_flagging_tape_to_chiseled_bookshelf
 advancement revoke @a only survey:rclick_disto
 advancement revoke @a only survey:rclick_witeout
 
-# display error message if low maxCommandChainLength
-execute store result score #survey max_command_chain_length run gamerule maxCommandChainLength
-execute unless score #survey max_command_chain_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low maxCommandChainLength value detected - this may interfere with the cave survey datapack. It's reccomended to reset maxCommandChainLength to its default value using ","color":"red"},{"text":"/gamerule maxCommandChainLength 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule maxCommandChainLength 65536"}}]
-scoreboard players reset #survey max_command_chain_length
+# display error message if low max_command_sequence_length
+execute store result score #survey max_command_sequence_length run gamerule max_command_sequence_length
+execute unless score #survey max_command_sequence_length matches 65536.. run tellraw @a [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Low max_command_sequence_length value detected - this may interfere with the cave survey datapack. It's reccomended to reset max_command_sequence_length to its default value using ","color":"red"},{"text":"/gamerule max_command_sequence_length 65536","color":"yellow","click_event":{"action":"suggest_command","command":"/gamerule max_command_sequence_length 65536"}}]
+scoreboard players reset #survey max_command_sequence_length
 
 # start 20t loop
 schedule function survey:general/loop_20t 20t
