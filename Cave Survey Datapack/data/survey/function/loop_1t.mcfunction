@@ -19,7 +19,7 @@ execute if items entity @s container.* minecraft:music_disc_lava_chicken[minecra
 # update/use flagging tape if player holding item
 execute if items entity @s weapon.* *[minecraft:custom_data~{flagging_tape:1b}] at @s run function survey:flagging_tape/use/hold_item
 # reset right click item objective
-execute if score @s survey.general.click_writable_book matches 1.. run scoreboard players set @s survey.general.click_writable_book 0
+execute if score @s survey.click_writable_book matches 1.. run scoreboard players set @s survey.click_writable_book 0
 
 # remove headlamp light from previous tick
 execute at @s run function survey:headlamp/use/remove_light

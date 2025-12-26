@@ -1,18 +1,18 @@
 # cancel uninstall if confirm command not used
-execute unless score @s survey.general.uninstall_timer matches 1..300 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/trigger survey.uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.uninstall"}},{"text":" or "},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall cave survey datapack", "color":"red"}]
-execute unless score @s survey.general.uninstall_timer matches 1..300 run return 0
+execute unless score @s survey.uninstall_timer matches 1..300 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/trigger survey.uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.uninstall"}},{"text":" or "},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall cave survey datapack", "color":"red"}]
+execute unless score @s survey.uninstall_timer matches 1..300 run return 0
 
 # remove general objectives
-scoreboard objectives remove survey.general.-1
-scoreboard objectives remove survey.general.10
-scoreboard objectives remove survey.general.100
-scoreboard objectives remove survey.general.1000
-scoreboard objectives remove survey.general.max_command_sequence_length
-scoreboard objectives remove survey.general.click_writable_book
-scoreboard objectives remove survey.general.uninstall_timer
-scoreboard objectives remove survey.general.current_gametime
-scoreboard objectives remove survey.general.last_gametime
-scoreboard objectives remove survey.general.gametime_change
+scoreboard objectives remove survey.-1
+scoreboard objectives remove survey.10
+scoreboard objectives remove survey.100
+scoreboard objectives remove survey.1000
+scoreboard objectives remove survey.max_command_sequence_length
+scoreboard objectives remove survey.click_writable_book
+scoreboard objectives remove survey.uninstall_timer
+scoreboard objectives remove survey.current_gametime
+scoreboard objectives remove survey.last_gametime
+scoreboard objectives remove survey.gametime_change
 # remove command objectives
 scoreboard objectives remove survey.clear_flagging_tape
 scoreboard objectives remove survey.clear_witeout
@@ -102,7 +102,7 @@ tag @a remove disto_triple_shot_beep_eyes
 tag @s remove disto_triple_shot_beep_witeout
 tag @a remove survey.op
 # remove storage data
-data remove storage survey:data general
+data remove storage survey:data gametime
 data remove storage survey:data disto
 data remove storage survey:data flagging_tape
 data remove storage survey:data witeout

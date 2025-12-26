@@ -12,11 +12,11 @@ execute store result score #survey survey.flagging_tape.z run data get entity @e
 execute store result score #survey survey.flagging_tape.player_azimuth run data get entity @s Rotation[0] 100
 # calculate decimal of each flagging tape coordinate
 scoreboard players operation #survey survey.flagging_tape.x_decimal = #survey survey.flagging_tape.x
-scoreboard players operation #survey survey.flagging_tape.x_decimal %= #survey survey.general.1000
+scoreboard players operation #survey survey.flagging_tape.x_decimal %= #survey survey.1000
 scoreboard players operation #survey survey.flagging_tape.y_decimal = #survey survey.flagging_tape.y
-scoreboard players operation #survey survey.flagging_tape.y_decimal %= #survey survey.general.1000
+scoreboard players operation #survey survey.flagging_tape.y_decimal %= #survey survey.1000
 scoreboard players operation #survey survey.flagging_tape.z_decimal = #survey survey.flagging_tape.z
-scoreboard players operation #survey survey.flagging_tape.z_decimal %= #survey survey.general.1000
+scoreboard players operation #survey survey.flagging_tape.z_decimal %= #survey survey.1000
 # set flagging tape rotation
 execute if score #survey survey.flagging_tape.x_decimal matches 0 as @e[tag=flagging_tape,sort=nearest,limit=1,type=text_display,distance=..0.1] run tp @s ~ ~ ~ -90 0
 execute if score #survey survey.flagging_tape.x_decimal matches 999 as @e[tag=flagging_tape,sort=nearest,limit=1,type=text_display,distance=..0.1] run tp @s ~ ~ ~ 90 0

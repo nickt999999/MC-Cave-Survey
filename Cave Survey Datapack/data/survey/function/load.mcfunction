@@ -1,16 +1,16 @@
 ## from #minecraft:load
 
 # add general objectives
-scoreboard objectives add survey.general.-1 dummy
-scoreboard objectives add survey.general.10 dummy
-scoreboard objectives add survey.general.100 dummy
-scoreboard objectives add survey.general.1000 dummy
-scoreboard objectives add survey.general.max_command_sequence_length dummy
-scoreboard objectives add survey.general.click_writable_book minecraft.used:minecraft.writable_book
-scoreboard objectives add survey.general.uninstall_timer dummy
-scoreboard objectives add survey.general.current_gametime dummy
-scoreboard objectives add survey.general.last_gametime dummy
-scoreboard objectives add survey.general.gametime_change dummy
+scoreboard objectives add survey.-1 dummy
+scoreboard objectives add survey.10 dummy
+scoreboard objectives add survey.100 dummy
+scoreboard objectives add survey.1000 dummy
+scoreboard objectives add survey.max_command_sequence_length dummy
+scoreboard objectives add survey.click_writable_book minecraft.used:minecraft.writable_book
+scoreboard objectives add survey.uninstall_timer dummy
+scoreboard objectives add survey.current_gametime dummy
+scoreboard objectives add survey.last_gametime dummy
+scoreboard objectives add survey.gametime_change dummy
 # add command objectives
 scoreboard objectives add survey.clear_flagging_tape trigger
 scoreboard objectives add survey.clear_witeout trigger
@@ -91,10 +91,10 @@ scoreboard objectives add survey.witeout.clear_timer dummy
 scoreboard objectives add survey.witeout.blot_count dummy
 
 # set constant objectives
-scoreboard players set #survey survey.general.-1 -1
-scoreboard players set #survey survey.general.10 10
-scoreboard players set #survey survey.general.100 100
-scoreboard players set #survey survey.general.1000 1000
+scoreboard players set #survey survey.-1 -1
+scoreboard players set #survey survey.10 10
+scoreboard players set #survey survey.100 100
+scoreboard players set #survey survey.1000 1000
 # set initial disto id counter
 execute store result score #survey survey.disto.id_counter run random value 0..2147483646
 # revoke advancements
@@ -103,4 +103,4 @@ advancement revoke @a only survey:rclick_disto
 advancement revoke @a only survey:rclick_witeout
 
 # start 20t loop
-schedule function survey:general/loop_20t 20t
+schedule function survey:loop_20t 20t
