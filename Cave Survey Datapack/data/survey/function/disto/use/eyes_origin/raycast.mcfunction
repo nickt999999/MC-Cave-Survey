@@ -16,4 +16,4 @@ scoreboard players operation #survey survey.disto.backwards_raycast_steps = #sur
 execute store result storage survey:data disto.shot.shot_in_range byte 1 unless data storage survey:data {disto:{shot:{raycast:{result:"range_limit"}}}}
 # spawn target position marker
 execute if data storage survey:data {disto:{shot:{shot_in_range:1b}}} at @e[tag=raycast_target_pos,type=marker,distance=..260] run summon marker ~ ~ ~ {Tags:["disto_target_pos","survey_datapack"]}
-execute if data storage survey:data {disto:{shot:{shot_in_range:0b}}} run function survey:disto/use/eyes_origin/set_out_of_range_target_pos with storage survey:data disto.shot
+execute if data storage survey:data {disto:{shot:{shot_in_range:0b}}} run function survey:disto/use/eyes_origin/set_out_of_range_target_pos with storage survey:data disto.shot.raycast
