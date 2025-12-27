@@ -28,8 +28,9 @@ recipe give @a survey:flagging_tape
 recipe give @a survey:headlamp
 recipe give @a survey:witeout
 
-# set disto swaphands timer if unset
+# set swaphands/backsight timers if unset
 execute as @a unless score @s survey.disto.swaphands_timer matches 0..5 run scoreboard players set @s survey.disto.swaphands_timer 0
+execute as @a unless score @s survey.disto.change_backsight_mode_timer matches 0..10 run scoreboard players set @s survey.disto.change_backsight_mode_timer 0
 
 # clear witeout and flagging tape entities if block broken
 execute as @a at @e[tag=witeout_blot_placed_target_pos,type=marker,distance=..300] if block ^ ^ ^0.01 #survey:raycast_transparent run function survey:witeout/break
