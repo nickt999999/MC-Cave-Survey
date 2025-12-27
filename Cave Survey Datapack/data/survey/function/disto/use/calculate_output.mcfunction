@@ -25,6 +25,8 @@ execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} at @e[tag=
 # apply rotation
 execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} run scoreboard players add #survey survey.disto.azimuth 180000
 execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} if score #survey survey.disto.azimuth matches -180000..-1 run scoreboard players add #survey survey.disto.azimuth 360000
+execute if data storage survey:data {disto:{shot:{backsight_mode:1b}}} run scoreboard players add #survey survey.disto.azimuth 0
+execute if data storage survey:data {disto:{shot:{backsight_mode:1b}}} if score #survey survey.disto.azimuth matches -180000..-1 run scoreboard players add #survey survey.disto.azimuth 360000
 # calculate azimuth display objectives
 scoreboard players operation #survey survey.disto.azimuth_decimal_3 = #survey survey.disto.azimuth
 scoreboard players operation #survey survey.disto.azimuth_decimal_3 %= #survey survey.10
