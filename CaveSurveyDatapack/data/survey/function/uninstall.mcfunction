@@ -1,5 +1,5 @@
 # cancel uninstall if confirm command not used
-execute unless score @s survey.uninstall_timer matches 1..300 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/trigger survey.uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.uninstall"}},{"text":" or "},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall cave survey datapack", "color":"red"}]
+execute unless score @s survey.uninstall_timer matches 1..300 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Use ","color":"red"},{"text":"/trigger survey.uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/trigger survey.uninstall"}},{"text":" or "},{"text":"/function survey:command/uninstall","color":"yellow","click_event":{"action":"suggest_command","command":"/function survey:command/uninstall"}},{"text":" to uninstall Cave Survey datapack", "color":"red"}]
 execute unless score @s survey.uninstall_timer matches 1..300 run return 0
 
 # remove general objectives
@@ -110,7 +110,7 @@ data remove storage survey:data witeout
 function survey:headlamp/remove_world_light
 
 # display uninstall text
-tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/Cave Survey Datapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/Cave Survey Datapack\""}},{"text":" to re-enable"}]
+tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave Survey datapack disabled. Use "},{"text":"/datapack enable \"file/CaveSurveyDatapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/CaveSurveyDatapack\""}},{"text":" to re-enable"}]
 
 # TEMP debug
 kill @e[type=marker,tag=dist_origin]
@@ -120,4 +120,4 @@ kill @e[type=marker,tag=ang_target]
 execute if entity @e[type=marker] run tellraw @s [{"text":"["},{"text":"DEBUG","color":"red"},{"text":"] "},{"text":"Markers detected after uninstall","color":"red"}]
 
 # disable datapack
-datapack disable "file/Cave Survey Datapack"
+datapack disable "file/CaveSurveyDatapack"
