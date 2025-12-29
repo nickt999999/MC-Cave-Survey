@@ -1,6 +1,3 @@
-# temp
-say toggle
-
 # reset timers
 scoreboard players set @s survey.disto.swaphands_timer 0
 scoreboard players set @s survey.disto.change_backsight_mode_timer 10
