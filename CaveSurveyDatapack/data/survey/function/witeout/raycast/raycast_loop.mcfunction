@@ -1,5 +1,5 @@
 # end raycast if block
-execute unless block ~ ~ ~ #survey:raycast_transparent positioned ^ ^ ^-0.01 run return run function survey:witeout/raycast/end {raycast_result:"block"}
+execute unless block ~ ~ ~ #survey:item_raycast_transparent positioned ^ ^ ^-0.01 run return run function survey:witeout/raycast/end {raycast_result:"block"}
 # end raycast if witeout blot
 execute at @e[tag=survey.witeout.entity,distance=..0.1,type=block_display] run return run function survey:witeout/raycast/end {raycast_result:"witeout"}
 # end raycast if entity hitbox

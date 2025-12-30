@@ -1,5 +1,5 @@
 # end raycast if block
-execute unless block ~ ~ ~ #survey:raycast_transparent run return run function survey:disto/use/raycast/end {result:"block"}
+execute unless block ~ ~ ~ #survey:beam_raycast_transparent run return run function survey:disto/use/raycast/end {result:"block"}
 # end raycast if entity hitbox
 execute positioned ~0.0001 ~0.0001 ~0.0001 as @e[dx=0,tag=!survey.self,type=!marker,distance=..30] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,distance=..30] positioned ~0.9999 ~0.9999 ~0.9999 run return run function survey:disto/use/raycast/end {result:"entity"}
 # end raycast if range limit reached
