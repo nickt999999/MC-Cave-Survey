@@ -18,7 +18,7 @@
             "minecraft:item_model": "survey:headlamp",
             "minecraft:custom_data": {
                 "headlamp": true,
-                "survey_datapack": true
+                "survey": true
             }
         }
     }

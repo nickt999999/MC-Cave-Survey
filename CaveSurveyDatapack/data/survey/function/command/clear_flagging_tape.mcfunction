@@ -1,6 +1,6 @@
 # get number of flagging tape pieces
 scoreboard players set #survey survey.flagging_tape.count 0
-execute at @e[tag=flagging_tape,type=text_display] run scoreboard players add #survey survey.flagging_tape.count 1
+execute at @e[tag=survey.flagging_tape.entity,type=text_display] run scoreboard players add #survey survey.flagging_tape.count 1
 
 # display error if 0 flagging tape pieces
 execute if score #survey survey.flagging_tape.count matches 0 run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"No flagging tape pieces were found","color":"red"}]
@@ -12,7 +12,7 @@ execute if score @s survey.flagging_tape.clear_timer matches 1..200 if score #su
 execute if score @s survey.flagging_tape.clear_timer matches 1..200 if score #survey survey.flagging_tape.count matches 2.. run tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] Cleared "},{"score":{"name":"#survey","objective":"survey.flagging_tape.count"}},{"text":" flagging tape pieces"}]
 
 # remove flagging tape pieces
-execute if score #survey survey.flagging_tape.count matches 1.. if score @s survey.flagging_tape.clear_timer matches 1..200 at @e[tag=flagging_tape,type=text_display] run function survey:flagging_tape/use/break
+execute if score #survey survey.flagging_tape.count matches 1.. if score @s survey.flagging_tape.clear_timer matches 1..200 at @e[tag=survey.flagging_tape.entity,type=text_display] run function survey:flagging_tape/use/break
 
 # update confirm timer
 execute if score #survey survey.flagging_tape.count matches 1.. unless score @s survey.flagging_tape.clear_timer matches 1..200 run scoreboard players set @s survey.flagging_tape.clear_timer 200

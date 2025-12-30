@@ -93,14 +93,14 @@ scoreboard objectives remove survey.witeout.clear_timer
 scoreboard objectives remove survey.witeout.blot_count
 
 # remove tags (online players only)
-tag @a remove disto_mainhand
-tag @a remove disto_offhand
-tag @a remove rclick_disto_tick
-tag @a remove rclick_disto_hold
-tag @a remove disto_triple_shot_beep_center
-tag @a remove disto_triple_shot_beep_eyes
-tag @s remove disto_triple_shot_beep_witeout
 tag @a remove survey.op
+tag @a remove survey.disto.hold_mainhand
+tag @a remove survey.disto.hold_offhand
+tag @a remove survey.disto.rclick_tick
+tag @a remove survey.disto.rclick_hold
+tag @a remove survey.disto.triple_shot_beep_center
+tag @a remove survey.disto.triple_shot_beep_eyes
+tag @s remove survey.disto.triple_shot_beep_witeout
 # remove storage data
 data remove storage survey:data gametime
 data remove storage survey:data disto
@@ -112,12 +112,10 @@ function survey:headlamp/remove_world_light
 # display uninstall text
 tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave Survey datapack disabled. Use "},{"text":"/datapack enable \"file/CaveSurveyDatapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/CaveSurveyDatapack\""}},{"text":" to re-enable"}]
 
-# TEMP debug
-kill @e[type=marker,tag=dist_origin]
-kill @e[type=marker,tag=dist_target]
-kill @e[type=marker,tag=ang_origin]
-kill @e[type=marker,tag=ang_target]
-execute if entity @e[type=marker] run tellraw @s [{"text":"["},{"text":"DEBUG","color":"red"},{"text":"] "},{"text":"Markers detected after uninstall","color":"red"}]
+# remove debug markers
+kill @e[type=marker,tag=survey.debug]
+# check for remaining markers
+execute if entity @e[type=marker] run tellraw @s [{"text":"["},{"text":"DISTO","color":"red"},{"text":"] [ "},{"text":"Debug","color":"gray"},{"text":"] "},{"text":"Markers detected after uninstall","color":"red"}]
 
 # disable datapack
 datapack disable "file/CaveSurveyDatapack"

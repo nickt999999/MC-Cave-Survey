@@ -11,8 +11,8 @@ execute if score @s survey.uninstall matches 1.. run function survey:command/uni
 # toggle backsight mode if player swaps hands with disto twice
 execute if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
 # update disto rclick tags
-execute unless entity @s[tag=rclick_disto_tick] run tag @s remove rclick_disto_hold
-tag @s remove rclick_disto_tick
+execute unless entity @s[tag=survey.disto.rclick_tick] run tag @s remove survey.disto.rclick_hold
+tag @s remove survey.disto.rclick_tick
 # set new disto item id 
 execute if items entity @s container.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b,disto_id:0b}] run function survey:disto/id/set_item_id
 
@@ -28,5 +28,5 @@ execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:
 execute if items entity @s armor.head minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
 
 # update witeout rclick tags
-execute unless entity @s[tag=rclick_witeout_tick] run tag @s remove rclick_witeout_hold
-tag @s remove rclick_witeout_tick
+execute unless entity @s[tag=survey.witeout.rclick_tick] run tag @s remove survey.witeout.rclick_hold
+tag @s remove survey.witeout.rclick_tick

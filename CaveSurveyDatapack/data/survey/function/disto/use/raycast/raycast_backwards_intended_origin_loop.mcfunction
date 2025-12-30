@@ -1,5 +1,5 @@
 # end raycast if target marker
-execute if entity @e[tag=disto_target_pos,distance=..0.001,type=marker] run return run function survey:disto/use/raycast/end {result:0}
+execute if entity @e[tag=survey.disto.target_pos,distance=..0.001,type=marker] run return run function survey:disto/use/raycast/end {result:0}
 # increment raycast step counter
 scoreboard players add #survey survey.disto.raycast_steps 1
 # loop raycast backwards

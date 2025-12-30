@@ -12,8 +12,8 @@
             "minecraft:item_name": "Flagging Tape",
             "minecraft:item_model": "survey:flagging_tape",
             "minecraft:custom_data": {
-                "flagging_tape": true,
-                "survey_datapack": true
+                "survey.flagging_tape.entity": true,
+                "survey": true
             }
         }
     }

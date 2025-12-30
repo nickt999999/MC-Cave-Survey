@@ -1,4 +1,4 @@
 # spawn raycast target position marker
-kill @e[tag=flagging_tape_target_pos,type=marker,distance=..10]
-summon marker ~ ~ ~ {Tags:["flagging_tape_target_pos","survey_datapack"]}
-tp @e[tag=flagging_tape_target_pos,type=marker,distance=..10] ~ ~ ~ ~ ~
+kill @e[tag=survey.flagging_tape.target_pos,type=marker,distance=..10]
+summon marker ~ ~ ~ {Tags:["survey.flagging_tape.target_pos","survey"]}
+tp @e[tag=survey.flagging_tape.target_pos,type=marker,distance=..10] ~ ~ ~ ~ ~

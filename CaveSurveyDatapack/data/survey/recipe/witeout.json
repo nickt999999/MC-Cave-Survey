@@ -18,7 +18,7 @@
             "minecraft:item_model": "survey:witeout",
             "minecraft:custom_data": {
                 "witeout": true,
-                "survey_datapack": true
+                "survey": true
             }
         }
     }

@@ -1,5 +1,5 @@
 # end raycast if bookshelf block
-execute if block ~ ~ ~ minecraft:chiseled_bookshelf if data block ~ ~ ~ Items[{components:{"minecraft:custom_data":{flagging_tape:1b}}}] run return run summon minecraft:marker ~ ~ ~ {Tags:["chiseled_bookshelf_pos","survey_datapack"]}
+execute if block ~ ~ ~ minecraft:chiseled_bookshelf if data block ~ ~ ~ Items[{components:{"minecraft:custom_data":{flagging_tape:1b}}}] run return run summon minecraft:marker ~ ~ ~ {Tags:["survey.flagging_tape.chiseled_bookshelf_pos","survey"]}
 # end raycast if range limit reached
 execute if score #survey survey.flagging_tape.raycast_steps matches 500 run return 0
 # increment step counter

@@ -9,13 +9,13 @@ execute if score @s survey.click_writable_book matches 1.. run function survey:f
 execute unless score @s survey.click_writable_book matches 1.. if function survey:flagging_tape/text_check/if_text_written run function survey:flagging_tape/use/raycast
 
 # break flagging tape if player right click item and raycast hits flagging tape
-execute if score @s survey.click_writable_book matches 1.. at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/use/break
+execute if score @s survey.click_writable_book matches 1.. at @e[tag=survey.flagging_tape.target_pos,type=marker,distance=..10] run function survey:flagging_tape/use/break
 
 # place flagging tape if valid item text written and raycast hits block
-execute if function survey:flagging_tape/text_check/if_text_written if function survey:flagging_tape/text_check/if_valid_text if data storage survey:data {flagging_tape:{raycast_result:"block"}} at @e[tag=flagging_tape_target_pos,type=marker,distance=..10] run function survey:flagging_tape/use/place
+execute if function survey:flagging_tape/text_check/if_text_written if function survey:flagging_tape/text_check/if_valid_text if data storage survey:data {flagging_tape:{raycast_result:"block"}} at @e[tag=survey.flagging_tape.target_pos,type=marker,distance=..10] run function survey:flagging_tape/use/place
 # update item if item text written
 execute if function survey:flagging_tape/text_check/if_text_written run function survey:flagging_tape/item/update
 
 # remove raycast tag and marker
-tag @s remove self
-kill @e[tag=flagging_tape_target_pos,type=marker,distance=..10]
+tag @s remove survey.self
+kill @e[tag=survey.flagging_tape.target_pos,type=marker,distance=..10]

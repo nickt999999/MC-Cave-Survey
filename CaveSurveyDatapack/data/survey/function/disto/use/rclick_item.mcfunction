@@ -2,9 +2,9 @@
 advancement revoke @s only survey:rclick_disto
 
 # prevent use if holding rclick
-tag @s add rclick_disto_tick
-execute if entity @s[tag=rclick_disto_hold] run return 0
-tag @s add rclick_disto_hold
+tag @s add survey.disto.rclick_tick
+execute if entity @s[tag=survey.disto.rclick_hold] run return 0
+tag @s add survey.disto.rclick_hold
 # prevent use if within cooldown
 execute if score @s survey.disto.cooldown_gametime matches 0.. run return 0
 

@@ -1,6 +1,6 @@
 # get shot inclination and rotation
-execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} store result score #survey survey.disto.inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] -1000
-execute if data storage survey:data {disto:{shot:{backsight_mode:1b}}} store result score #survey survey.disto.inclination run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[1] 1000
+execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} store result score #survey survey.disto.inclination run data get entity @e[tag=survey.disto.origin_pos,limit=1,type=marker,distance=..4] Rotation[1] -1000
+execute if data storage survey:data {disto:{shot:{backsight_mode:1b}}} store result score #survey survey.disto.inclination run data get entity @e[tag=survey.disto.origin_pos,limit=1,type=marker,distance=..4] Rotation[1] 1000
 # calculate absolute value for floor rounding
 scoreboard players operation #survey survey.disto.inclination_abs = #survey survey.disto.inclination
 execute if score #survey survey.disto.inclination matches -2147483648..0 run scoreboard players operation #survey survey.disto.inclination_abs *= #survey survey.-1
@@ -19,9 +19,9 @@ scoreboard players operation #survey survey.disto.inclination_decimal_2 %= #surv
 scoreboard players operation #survey survey.disto.inclination_decimal_2 /= #survey survey.10
 
 # get shot azimuth
-execute if score #survey survey.disto.inclination matches -89999..89998 store result score #survey survey.disto.azimuth run data get entity @e[tag=disto_origin_pos,limit=1,type=marker,distance=..4] Rotation[0] 1000
+execute if score #survey survey.disto.inclination matches -89999..89998 store result score #survey survey.disto.azimuth run data get entity @e[tag=survey.disto.origin_pos,limit=1,type=marker,distance=..4] Rotation[0] 1000
 execute unless score #survey survey.disto.inclination matches -89999..89998 store result score #survey survey.disto.azimuth run data get entity @s Rotation[0] 1000
-execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} at @e[tag=disto_origin_pos,type=marker,distance=..4] if entity @e[tag=disto_target_pos,distance=..0.01,type=marker] store result score #survey survey.disto.azimuth run data get entity @s Rotation[0] 1000
+execute if data storage survey:data {disto:{shot:{origin:"witeout"}}} at @e[tag=survey.disto.origin_pos,type=marker,distance=..4] if entity @e[tag=survey.disto.target_pos,distance=..0.01,type=marker] store result score #survey survey.disto.azimuth run data get entity @s Rotation[0] 1000
 # apply rotation
 execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} run scoreboard players add #survey survey.disto.azimuth 180000
 execute if data storage survey:data {disto:{shot:{backsight_mode:0b}}} if score #survey survey.disto.azimuth matches -180000..-1 run scoreboard players add #survey survey.disto.azimuth 360000

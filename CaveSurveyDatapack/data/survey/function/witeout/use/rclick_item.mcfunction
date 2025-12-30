@@ -2,9 +2,9 @@
 advancement revoke @s only survey:rclick_witeout
 
 # prevent use if holding rclick
-tag @s add rclick_witeout_tick
-execute if entity @s[tag=rclick_witeout_hold] run return 0
-tag @s add rclick_witeout_hold
+tag @s add survey.witeout.rclick_tick
+execute if entity @s[tag=survey.witeout.rclick_hold] run return 0
+tag @s add survey.witeout.rclick_hold
 # prevent use if within cooldown
 execute if score @s survey.witeout.cooldown_gametime matches 0.. run return 0
 
