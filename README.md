@@ -11,25 +11,25 @@ The datapack adds 4 custom items into Minecraft: the (modified) Disto-X2, Wite-O
 
 ### Resourcepack Installation
 
-1. Download and extract the "**Cave Survey Resourcepack**" folder
+1. Click the latest release under **Releases** in GitHub. Download and extract **CaveSurveyResourcepack.zip**
 2. Locate your Minecraft resourcepack folder — in the **Options** menu (from the title screen or esc menu), click **Resource Packs** (left), then **Open Pack Folder** (bottom)
     - For multiplayer servers, it's a good idea to add this as a server resourcepack too
-3. Move the extracted "**Cave Survey Resourcepack**" folder into your Minecraft resourcepack folder
-4. Go back to the **Resource Packs** menu in Minecraft — hover over the **Cave Survey Resourcepack** under the "**Available**" resourcepacks and click the right arrowhead icon to move it under the "**Selected**" resourcepacks
+3. Move the extracted **CaveSurveyResourcepack** folder into your Minecraft resourcepack folder
+4. Go back to the **Resource Packs** menu in Minecraft — hover over the **CaveSurveyResourcepack** under the "**Available**" resourcepacks and click the right arrowhead icon to move it under the "**Selected**" resourcepacks
 5. Click **Done** and wait for it to load. This won't change any regular textures, it just adds textures to the custom datapack items
     - If datapack items show as missing textures (black and purple cubes) later on then the resourcepack isn't installed correctly — check that it shows up under the "**Selected**" resourcepacks or that you're running the right Minecraft version
 
 ### Datapack Installation
 
-1. Download and extract the "**Cave Survey Datapack**" folder
+1. Click the latest release under **Releases** in GitHub. Download and extract **CaveSurveyDatapack.zip**
 2. Locate your world datapack folder
     - For a new singleplayer world: open this from the **Create New World** menu by clicking on **More** (top right), then **Data Packs**, then **Open Pack Folder**
-    - For an existing singleplayer world: select your world from the world list, click on **Edit** (bottom left), then **Open World Folder** — inside the world folder, open the "**datapacks**" folder
-3. Move the extracted "**Cave Survey Datapack**" folder into your world datapack folder
+    - For an existing singleplayer world: select your world from the world list, click on **Edit** (bottom left), then **Open World Folder** — inside the world folder, open the **datapacks** folder
+3. Move the extracted **CaveSurveyDatapack** folder into your world datapack folder
 4. Open your world in Minecraft — a "Cave Survey datapack enabled" message should show up
     - If not, use the **/datapack** command to enable the datapack
 5. Give yourself the datapack op perms tag — type **/tag @s add survey.op** and a "command permissions granted" message should show up
-    - Type "**/trigger survey.help**" for a list of datapack /trigger commands, including commands to get each custom item
+    - Type **/trigger survey.help** for a list of datapack /trigger commands, including commands to get each custom item
 
 ## Using the Cave Survey Datapack
 

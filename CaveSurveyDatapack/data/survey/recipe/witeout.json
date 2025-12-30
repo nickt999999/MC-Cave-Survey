@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "minecraft:glass_bottle",
+        "minecraft:slime_ball",
+        "minecraft:white_dye"
+    ],
+    "result": {
+        "id": "minecraft:music_disc_lava_chicken",
+        "components": {
+            "!minecraft:jukebox_playable": {},
+            "minecraft:consumable": {
+                "consume_seconds":2147483647
+            },
+            "minecraft:max_damage": 70,
+            "minecraft:item_name": "Wite-Out",
+            "minecraft:item_model": "survey:witeout",
+            "minecraft:custom_data": {
+                "witeout": true,
+                "survey": true
+            }
+        }
+    }
+}

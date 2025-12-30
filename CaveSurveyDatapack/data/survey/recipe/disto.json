@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+      "NBN",
+      "NNN",
+      "NNN"
+    ],
+    "key": {
+        "N": "minecraft:netherite_block",
+        "B": "minecraft:beacon"
+    },
+    "result": {
+        "id": "minecraft:music_disc_lava_chicken",
+        "components": {
+            "!minecraft:jukebox_playable": {},
+            "minecraft:consumable": {
+                "consume_seconds": 2147483647
+            },
+            "minecraft:item_name": "Disto-X2",
+            "minecraft:item_model": "survey:disto",
+            "minecraft:custom_data": {
+                "disto": true,
+                "disto_id": false,
+                "backsight_mode": false,
+                "survey": true
+            }
+        }
+    }
+}
