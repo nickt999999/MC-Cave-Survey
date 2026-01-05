@@ -14,7 +14,10 @@
                 "consume_seconds":2147483647
             },
             "minecraft:max_damage": 70,
-            "minecraft:item_name": "Wite-Out",
+            "minecraft:item_name": {
+                "text": "Wite-Out",
+                "color": "white"
+            },
             "minecraft:item_model": "survey:witeout",
             "minecraft:custom_data": {
                 "witeout": true,

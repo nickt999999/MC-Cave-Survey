@@ -14,7 +14,10 @@
                 "slot": "head",
                 "damage_on_hurt": false
             },
-            "minecraft:item_name": "Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",
+            "minecraft:item_name": {
+                "text": "Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp",
+                "color": "white"
+            },
             "minecraft:item_model": "survey:headlamp",
             "minecraft:custom_data": {
                 "headlamp": true,

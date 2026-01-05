@@ -17,7 +17,10 @@
             "minecraft:consumable": {
                 "consume_seconds": 2147483647
             },
-            "minecraft:item_name": "Disto-X2",
+            "minecraft:item_name": {
+                "text": "Disto™ X310",
+                "color": "white"
+            },
             "minecraft:item_model": "survey:disto",
             "minecraft:custom_data": {
                 "disto": true,
