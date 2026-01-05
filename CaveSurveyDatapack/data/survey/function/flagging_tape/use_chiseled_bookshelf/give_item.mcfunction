@@ -1,0 +1,2 @@
+# give flagging tape item
+$item replace entity @s weapon.mainhand with minecraft:writable_book[minecraft:max_damage=45,damage=$(damage),minecraft:item_name="Flagging Tape",minecraft:item_model="survey:flagging_tape",minecraft:custom_data={flagging_tape:1b,survey:1b}]

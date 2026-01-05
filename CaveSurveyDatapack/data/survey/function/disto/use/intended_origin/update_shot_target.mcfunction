@@ -1,0 +1,5 @@
+# update distance objectives
+scoreboard players operation #survey survey.disto.forwards_raycast_steps = #survey survey.disto.intended_origin_forwards_raycast_steps
+scoreboard players operation #survey survey.disto.backwards_raycast_steps = #survey survey.disto.raycast_steps
+# update shot target marker position
+execute at @e[tag=survey.disto.target_pos,type=marker,distance=..260] run tp @e[tag=survey.disto.target_pos,distance=..0.01,type=marker] @e[tag=survey.disto.intended_target_pos,distance=..0.01,type=marker,limit=1]
