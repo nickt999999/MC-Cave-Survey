@@ -12,7 +12,7 @@
             "minecraft:item_name": "Flagging Tape",
             "minecraft:item_model": "survey:flagging_tape",
             "minecraft:custom_data": {
-                "survey.flagging_tape.entity": true,
+                "flagging_tape": true,
                 "survey": true
             }
         }
