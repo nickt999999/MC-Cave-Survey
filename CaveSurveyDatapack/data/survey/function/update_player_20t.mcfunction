@@ -1,4 +1,3 @@
-# TEMP edit this
 # enable help command objective
 scoreboard players enable @s survey.help
 # enable/disable op command perms if op tag updated
