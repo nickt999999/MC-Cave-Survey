@@ -1,0 +1,30 @@
+# run datapack command if command objective triggered
+execute unless score @s survey.clear_flagging_tape matches 0 run function survey:command/clear_flagging_tape
+execute unless score @s survey.clear_witeout matches 0 run function survey:command/clear_witeout
+execute unless score @s survey.give_disto matches 0 run function survey:command/give_disto
+execute unless score @s survey.give_flagging_tape matches 0 run function survey:command/give_flagging_tape
+execute unless score @s survey.give_headlamp matches 0 run function survey:command/give_headlamp
+execute unless score @s survey.give_witeout matches 0 run function survey:command/give_witeout
+execute unless score @s survey.help matches 0 run function survey:command/help
+execute unless score @s survey.uninstall matches 0 run function survey:command/uninstall
+
+# toggle backsight mode if player swaps hands with disto twice
+execute if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
+# update disto rclick tags
+execute unless entity @s[tag=survey.disto.rclick_tick] run tag @s remove survey.disto.rclick_hold
+tag @s remove survey.disto.rclick_tick
+# set new disto item id 
+execute if items entity @s container.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{disto:1b,disto_id:0b}] run function survey:disto/id/set_item_id
+
+# update/use flagging tape if player holding item
+execute if items entity @s weapon.* *[minecraft:custom_data~{flagging_tape:1b}] at @s run function survey:flagging_tape/use/hold_item
+# reset right click item objective
+execute if score @s survey.click_writable_book matches 1.. run scoreboard players set @s survey.click_writable_book 0
+
+# add headlamp light if player holding/wearing headlamp
+execute if items entity @s weapon.* minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
+execute if items entity @s armor.head minecraft:music_disc_lava_chicken[minecraft:custom_data~{headlamp:1b}] at @s run function survey:headlamp/use/add_light
+
+# update witeout rclick tags
+execute unless entity @s[tag=survey.witeout.rclick_tick] run tag @s remove survey.witeout.rclick_hold
+tag @s remove survey.witeout.rclick_tick

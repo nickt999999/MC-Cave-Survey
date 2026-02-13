@@ -1,0 +1,11 @@
+{
+    "values":[
+      "minecraft:gravel",
+      "#minecraft:sand",
+      "minecraft:observer",
+      "minecraft:piston",
+      "minecraft:sticky_piston",
+      "minecraft:piston_head",
+      "minecraft:tripwire"
+    ]
+  }
