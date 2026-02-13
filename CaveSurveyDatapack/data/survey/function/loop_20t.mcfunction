@@ -15,3 +15,6 @@ execute store result storage survey:data gametime int 1 run time query gametime
 
 # update player commands, recipes, timers, entities
 execute as @a run function survey:update_player_20t
+
+# loop function every 20 ticks
+schedule function survey:loop_20t 20t

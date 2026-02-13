@@ -21,6 +21,3 @@ execute unless score @s survey.disto.change_backsight_mode_timer matches 0..10 r
 # clear witeout and flagging tape entities if block broken
 execute at @s at @e[tag=survey.witeout.blot_target_pos,type=marker,distance=..300] if block ^ ^ ^0.01 #survey:item_raycast_transparent run function survey:witeout/break
 execute at @s at @e[tag=survey.flagging_tape.piece_target_pos,type=marker,distance=..300] if block ^ ^ ^0.001 #survey:item_raycast_transparent run function survey:flagging_tape/use/break
-
-# loop function every 20 ticks
-schedule function survey:loop_20t 20t
