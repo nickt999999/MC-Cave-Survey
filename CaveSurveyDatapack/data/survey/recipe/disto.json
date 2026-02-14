@@ -2,13 +2,14 @@
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
     "pattern": [
-      "NBN",
-      "NNN",
-      "NNN"
+      "RDR",
+      "OOO",
+      "OOO"
     ],
     "key": {
-        "N": "minecraft:netherite_block",
-        "B": "minecraft:beacon"
+        "O": "minecraft:obsidian",
+        "D": "minecraft:diamond",
+        "R": "minecraft:redstone"
     },
     "result": {
         "id": "minecraft:music_disc_lava_chicken",
