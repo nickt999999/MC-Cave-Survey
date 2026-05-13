@@ -110,7 +110,7 @@ data remove storage survey:data witeout
 function survey:headlamp/remove_world_light
 
 # display uninstall text
-tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/Cave Survey Datapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/Cave Survey Datapack\""}},{"text":" to re-enable"}]
+tellraw @s [{"text":"["},{"text":"SURVEY","color":"red"},{"text":"] "},{"text":"Cave survey datapack disabled. Use "},{"text":"/datapack enable \"file/CaveSurveyDatapack\"","color":"yellow","click_event":{"action":"suggest_command","command":"/datapack enable \"file/CaveSurveyDatapack\""}},{"text":" to re-enable"}]
 
 # disable datapack
 datapack disable "file/CaveSurveyDatapack"
