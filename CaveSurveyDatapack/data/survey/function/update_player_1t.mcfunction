@@ -1,12 +1,12 @@
 # run datapack command if command objective triggered
-execute if score @s survey.clear_flagging_tape matches 1.. run function survey:command/clear_flagging_tape
-execute if score @s survey.clear_witeout matches 1.. run function survey:command/clear_witeout
-execute if score @s survey.give_disto matches 1.. run function survey:command/give_disto
-execute if score @s survey.give_flagging_tape matches 1.. run function survey:command/give_flagging_tape
-execute if score @s survey.give_headlamp matches 1.. run function survey:command/give_headlamp
-execute if score @s survey.give_witeout matches 1.. run function survey:command/give_witeout
-execute if score @s survey.help matches 1.. run function survey:command/help
-execute if score @s survey.uninstall matches 1.. run function survey:command/uninstall
+execute if score @s survey.clear_flagging_tape matches -2147483648.. unless score @s survey.clear_flagging_tape matches 0 run function survey:command/clear_flagging_tape
+execute if score @s survey.clear_witeout matches -2147483648.. unless score @s survey.clear_witeout matches 0 run function survey:command/clear_witeout
+execute if score @s survey.give_disto matches -2147483648.. unless score @s survey.give_disto matches 0 run function survey:command/give_disto
+execute if score @s survey.give_flagging_tape matches -2147483648.. unless score @s survey.give_flagging_tape matches 0 run function survey:command/give_flagging_tape
+execute if score @s survey.give_headlamp matches -2147483648.. unless score @s survey.give_headlamp matches 0 run function survey:command/give_headlamp
+execute if score @s survey.give_witeout matches -2147483648.. unless score @s survey.give_witeout matches 0 run function survey:command/give_witeout
+execute if score @s survey.help matches -2147483648.. unless score @s survey.help matches 0 run function survey:command/help
+execute if score @s survey.uninstall matches -2147483648.. unless score @s survey.uninstall matches 0 run function survey:command/uninstall
 
 # toggle backsight mode if player swaps hands with disto twice
 execute if function survey:disto/backsight_mode/if_double_swaphands at @s run function survey:disto/backsight_mode/toggle with storage survey:data disto.backsight_mode
