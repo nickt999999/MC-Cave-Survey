@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "category": "equipment",
+    "category": "misc",
     "pattern": [
       "RDR",
       "OOO",
@@ -30,5 +30,6 @@
                 "survey": true
             }
         }
-    }
+    },
+    "show_notification": false
 }
