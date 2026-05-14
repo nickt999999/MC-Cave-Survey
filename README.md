@@ -1,9 +1,9 @@
-# Disto in Minecraft [Java 1.21.11]
+# Disto in Minecraft [Java 1.21.11 — 26.1.2]
 
 Disto in Minecraft (real)
 <br>
 <br>
-The datapack adds 4 custom items into Minecraft: the (modified) Disto™ X310, Wite-Out, flagging tape, and the Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI headlamp. The resourcepack adds custom item textures for each. Both are compatible with **Minecraft Java 1.21.11**, for singleplayer or multiplayer (*I think, not very tested) worlds. You can use these to set stations and take in-game measurements for a pencil-and-paper Minecraft cave survey sketch.
+The datapack adds 4 custom items into Minecraft: the (modified) Disto™ X310, Wite-Out, flagging tape, and the Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI headlamp. The resourcepack adds custom item textures for each. Both are compatible with **Minecraft Java 1.21.11 through 26.1.2**, for singleplayer or multiplayer* (*I think, not very tested) worlds. You can use these to set stations and take in-game measurements for a pencil-and-paper Minecraft cave survey sketch.
 
 ![Title photo — player with cave survey tools](Media/Title%20Screenshot.png)
 

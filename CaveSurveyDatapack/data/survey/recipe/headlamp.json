@@ -24,5 +24,6 @@
                 "survey": true
             }
         }
-    }
+    },
+    "show_notification": false
 }
