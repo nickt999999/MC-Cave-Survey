@@ -55,7 +55,3 @@ You can craft flagging tape from paper and a slimeball, or spawn it using **/tri
 ### Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp
 
 You can craft a Zebralight H600Fd Mk IV 18650 XHP50.2 Floody 5000K High CRI Headlamp from an iron ingot, a redstone lamp, and string, or spawn it using **/trigger survey.give_headlamp**. Hold or wear the headlamp to shine light close in front of you and in the direction you're looking, up to 75 blocks away.
-
-## Contributors & Contact
-
-Nick Travisano — nicktravisano1@gmail.com
