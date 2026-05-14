@@ -2,14 +2,13 @@
     "type": "minecraft:crafting_shaped",
     "category": "misc",
     "pattern": [
-      "RDR",
-      "OOO",
-      "OOO"
+      "NBN",
+      "NNN",
+      "NNN"
     ],
     "key": {
-        "O": "minecraft:obsidian",
-        "D": "minecraft:diamond",
-        "R": "minecraft:redstone"
+        "N": "minecraft:netherite_block",
+        "B": "minecraft:beacon"
     },
     "result": {
         "id": "minecraft:music_disc_lava_chicken",
